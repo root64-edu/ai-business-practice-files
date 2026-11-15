@@ -1,0 +1,93 @@
+{
+  "source": "https://dapi.kakao.com/v2/local/search/keyword.json",
+  "parameters": {
+    "query": "경주 국립경주박물관",
+    "size": "5"
+  },
+  "retrieved_at": "2026-11-11T19:47:31.303218+00:00",
+  "http_status": 200,
+  "data": {
+    "documents": [
+      {
+        "address_name": "경북 경주시 인왕동 76",
+        "category_group_code": "CT1",
+        "category_group_name": "문화시설",
+        "category_name": "문화,예술 > 문화시설 > 박물관",
+        "distance": "",
+        "id": "9666845",
+        "phone": "054-740-7500",
+        "place_name": "국립경주박물관",
+        "place_url": "http://place.map.kakao.com/9666845",
+        "road_address_name": "경북 경주시 일정로 186",
+        "x": "129.22795026492514",
+        "y": "35.829233895353426"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 76",
+        "category_group_code": "CT1",
+        "category_group_name": "문화시설",
+        "category_name": "문화,예술 > 문화시설 > 박물관",
+        "distance": "",
+        "id": "9666846",
+        "phone": "054-740-7591",
+        "place_name": "국립경주박물관 어린이박물관",
+        "place_url": "http://place.map.kakao.com/9666846",
+        "road_address_name": "경북 경주시 일정로 186",
+        "x": "129.2287508153467",
+        "y": "35.82957135353371"
+      },
+      {
+        "address_name": "경북 경주시 구황동 619",
+        "category_group_code": "PK6",
+        "category_group_name": "주차장",
+        "category_name": "교통,수송 > 교통시설 > 주차장",
+        "distance": "",
+        "id": "20594690",
+        "phone": "",
+        "place_name": "국립경주박물관 공영주차장",
+        "place_url": "http://place.map.kakao.com/20594690",
+        "road_address_name": "",
+        "x": "129.22982045242338",
+        "y": "35.83050931254594"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 76",
+        "category_group_code": "CT1",
+        "category_group_name": "문화시설",
+        "category_name": "문화,예술 > 문화시설 > 전시관",
+        "distance": "",
+        "id": "17581661",
+        "phone": "",
+        "place_name": "국립경주박물관 특별전시관",
+        "place_url": "http://place.map.kakao.com/17581661",
+        "road_address_name": "경북 경주시 일정로 186",
+        "x": "129.228671887025",
+        "y": "35.8294394634649"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 76",
+        "category_group_code": "CT1",
+        "category_group_name": "문화시설",
+        "category_name": "문화,예술 > 문화시설 > 미술관",
+        "distance": "",
+        "id": "17574835",
+        "phone": "",
+        "place_name": "국립경주박물관 신라미술관",
+        "place_url": "http://place.map.kakao.com/17574835",
+        "road_address_name": "경북 경주시 일정로 186",
+        "x": "129.228618864244",
+        "y": "35.8288097169209"
+      }
+    ],
+    "meta": {
+      "is_end": false,
+      "pageable_count": 27,
+      "same_name": {
+        "keyword": "국립경주박물관",
+        "region": [],
+        "selected_region": "경북 경주시"
+      },
+      "total_count": 27
+    }
+  }
+}

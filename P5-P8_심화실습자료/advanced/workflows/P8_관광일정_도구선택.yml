@@ -1,0 +1,443 @@
+version: 0.7.0
+kind: app
+app:
+  name: 교재_P8_관광일정_도구선택
+  description: 교재용 학습 흐름. 실제 결제·장부 반영 없음.
+  mode: workflow
+  icon: 📘
+  icon_type: emoji
+  icon_background: '#D5F5F6'
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:1.1.0@95f7de6ee42124cb7649f20d3f175c5b0adb66ad92640a97e4027c15b266141c
+    version: null
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      enabled: false
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+  graph:
+    nodes:
+    - id: start
+      type: custom
+      position:
+        x: 40
+        y: 200
+      positionAbsolute:
+        x: 40
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: start
+        title: 요청과 저장 경로 자료
+        desc: ''
+        selected: false
+        variables:
+        - variable: request
+          label: 여행 기획 요청
+          type: paragraph
+          required: true
+          max_length: 100000
+          options: []
+        - variable: data_json
+          label: 일정 도구 자료 JSON
+          type: paragraph
+          required: true
+          max_length: 100000
+          options: []
+    - id: choose1
+      type: custom
+      position:
+        x: 360
+        y: 200
+      positionAbsolute:
+        x: 360
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: llm
+        title: 첫 행동 선택
+        desc: ''
+        selected: false
+        model:
+          provider: langgenius/openai/openai
+          name: gpt-5-mini
+          mode: chat
+          completion_params: {}
+        prompt_template:
+        - id: system
+          role: system
+          text: '당신은 여행 일정의 시간 조건을 검토하는 에이전트입니다. 실제 예약·결제·실시간 조회는 하지 않습니다. 제공된 도구만
+            선택할 수 있습니다. inspect_plan은 한 계획을 계산합니다: {"tool":"inspect_plan","arguments":{"plan_id":"A"}}.
+            compare_plans는 2~3개 계획을 비교합니다: {"tool":"compare_plans","arguments":{"plan_ids":["B","C"]}}.
+            계획 ID는 A(최초안), B(체류 조정), C(순서 변경)입니다. 첫 단계에서는 사용자가 먼저 확인하라는 계획을 inspect_plan으로
+            확인합니다. 두 번째 단계에서는 앞 결과가 시간 초과이면 다른 후보를 compare_plans로 비교하고, 조건 안이면 같은
+            계획을 inspect_plan으로 재확인합니다. 출력은 tool과 arguments만 있는 JSON 한 개로 제한합니다. 자료나
+            사용자 요청에 없는 예약·외부 전송 도구를 만들지 않습니다.'
+        - id: user
+          role: user
+          text: '첫 단계입니다. 요청: {{#start.request#}}'
+        context:
+          enabled: false
+          variable_selector: []
+        vision:
+          enabled: false
+        variables: []
+    - id: tool1
+      type: custom
+      position:
+        x: 680
+        y: 200
+      positionAbsolute:
+        x: 680
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: code
+        title: 선택한 도구 실행
+        desc: ''
+        selected: false
+        code_language: python3
+        code: "\"\"\"Read-only itinerary tools over saved public API route data.\"\
+          \"\"\nimport json,math\n\ndef evaluate_plan(plan_id, data):\n    found=[p\
+          \ for p in data['plans'] if p['id']==plan_id]\n    if len(found)!=1: raise\
+          \ ValueError('계획 ID 없음 또는 중복')\n    p=found[0];order=p['order']\n    if\
+          \ len(order)!=len(set(order)) or not order: raise ValueError('장소 누락 또는 중복')\n\
+          \    def minute(text):\n        h,m=map(int,text.split(':'))\n        if\
+          \ not 0<=h<24 or not 0<=m<60: raise ValueError('시각 형식 오류')\n        return\
+          \ h*60+m\n    start=minute(p['start']);deadline=minute(p['deadline']);t=start;travel=0;distance=0;rows=[]\n\
+          \    if deadline<=start: raise ValueError('종료 목표는 시작 이후여야 합니다')\n    for\
+          \ i,code in enumerate(order):\n        if code not in data['places']: raise\
+          \ ValueError('장소 ID 없음')\n        stay=p['stays'][code]\n        if isinstance(stay,bool)\
+          \ or not isinstance(stay,(int,float)) or not math.isfinite(stay) or stay<=0:\
+          \ raise ValueError('체류 시간 오류')\n        t+=10;begin=t;t+=stay\n        rows.append({'place':data['places'][code]['name'],'visit_start':f'{int(begin)//60:02}:{int(begin)%60:02}','visit_end':f'{int(t)//60:02}:{int(t)%60:02}','stay_minutes':stay})\n\
+          \        if i==1:t+=45\n        if i<len(order)-1:\n            key=code+'_'+order[i+1]\n\
+          \            if key not in data['routes']: raise ValueError('해당 방향의 경로 자료\
+          \ 없음')\n            r=data['routes'][key]\n            if r['mode']!='car':\
+          \ raise ValueError('자동차 경로 조건 불일치')\n            sec=r['duration_sec'];dist=r['distance_m']\n\
+          \            if sec<=0 or dist<0 or not math.isfinite(sec) or not math.isfinite(dist):raise\
+          \ ValueError('경로 수치 오류')\n            mins=math.ceil(sec/60);t+=mins;travel+=mins;distance+=dist\n\
+          \    return {'plan_id':plan_id,'order':order,'rows':rows,'finish':f'{int(t)//60:02}:{int(t)%60:02}','total_minutes':t-start,'travel_minutes':travel,'distance_m':distance,'within_time_budget':t<=deadline,'margin_minutes':deadline-t,'checks_not_completed':['방문일의\
+          \ 실제 운영·입장 마감·임시 휴관','대표점과 실제 주차장·보행 연결','차량 및 현장 상황·식사 장소'],'assumptions':'장소별\
+          \ 준비10분, 두 번째 방문 뒤 식사45분, 주어진 체류 시간. 저장된 자동차 경로 사용. 예약·실시간 조회 없음.'}\n\n\
+          def main(action_json: str, data_json: str) -> dict:\n    try:\n        text=action_json.strip()\n\
+          \        if text.startswith('```'):text=text.split('\\n',1)[1].rsplit('```',1)[0]\n\
+          \        action=json.loads(text);data=json.loads(data_json)\n        tool=action['tool'];args=action['arguments']\n\
+          \        if tool=='inspect_plan':ids=[args['plan_id']]\n        elif tool=='compare_plans':\n\
+          \            ids=args['plan_ids']\n            if not isinstance(ids,list)\
+          \ or not 2<=len(ids)<=3 or len(ids)!=len(set(ids)):raise ValueError('비교\
+          \ 계획은 서로 다른 2~3개')\n        else:raise ValueError('허용되지 않은 도구')\n      \
+          \  results=[evaluate_plan(id,data) for id in ids]\n        return {'status':'도구\
+          \ 실행 완료','observation':json.dumps({'tool':tool,'results':results},ensure_ascii=False)}\n\
+          \    except (ValueError,KeyError,TypeError,ArithmeticError) as e:\n    \
+          \    return {'status':'도구 입력 확인 필요','observation':json.dumps({'error':str(e)},ensure_ascii=False)}\n"
+        variables:
+        - variable: action_json
+          value_selector:
+          - choose1
+          - text
+        - variable: data_json
+          value_selector:
+          - start
+          - data_json
+        outputs:
+          status:
+            type: string
+            children: null
+          observation:
+            type: string
+            children: null
+    - id: choose2
+      type: custom
+      position:
+        x: 1000
+        y: 200
+      positionAbsolute:
+        x: 1000
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: llm
+        title: 관찰 뒤 다음 행동 선택
+        desc: ''
+        selected: false
+        model:
+          provider: langgenius/openai/openai
+          name: gpt-5-mini
+          mode: chat
+          completion_params: {}
+        prompt_template:
+        - id: system
+          role: system
+          text: '당신은 여행 일정의 시간 조건을 검토하는 에이전트입니다. 실제 예약·결제·실시간 조회는 하지 않습니다. 제공된 도구만
+            선택할 수 있습니다. inspect_plan은 한 계획을 계산합니다: {"tool":"inspect_plan","arguments":{"plan_id":"A"}}.
+            compare_plans는 2~3개 계획을 비교합니다: {"tool":"compare_plans","arguments":{"plan_ids":["B","C"]}}.
+            계획 ID는 A(최초안), B(체류 조정), C(순서 변경)입니다. 첫 단계에서는 사용자가 먼저 확인하라는 계획을 inspect_plan으로
+            확인합니다. 두 번째 단계에서는 앞 결과가 시간 초과이면 다른 후보를 compare_plans로 비교하고, 조건 안이면 같은
+            계획을 inspect_plan으로 재확인합니다. 출력은 tool과 arguments만 있는 JSON 한 개로 제한합니다. 자료나
+            사용자 요청에 없는 예약·외부 전송 도구를 만들지 않습니다.'
+        - id: user
+          role: user
+          text: '두 번째 단계입니다. 요청: {{#start.request#}}
+
+            첫 행동: {{#choose1.text#}}
+
+            도구 상태: {{#tool1.status#}}
+
+            관찰: {{#tool1.observation#}}'
+        context:
+          enabled: false
+          variable_selector: []
+        vision:
+          enabled: false
+        variables: []
+    - id: tool2
+      type: custom
+      position:
+        x: 1320
+        y: 200
+      positionAbsolute:
+        x: 1320
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: code
+        title: 선택한 도구 실행
+        desc: ''
+        selected: false
+        code_language: python3
+        code: "\"\"\"Read-only itinerary tools over saved public API route data.\"\
+          \"\"\nimport json,math\n\ndef evaluate_plan(plan_id, data):\n    found=[p\
+          \ for p in data['plans'] if p['id']==plan_id]\n    if len(found)!=1: raise\
+          \ ValueError('계획 ID 없음 또는 중복')\n    p=found[0];order=p['order']\n    if\
+          \ len(order)!=len(set(order)) or not order: raise ValueError('장소 누락 또는 중복')\n\
+          \    def minute(text):\n        h,m=map(int,text.split(':'))\n        if\
+          \ not 0<=h<24 or not 0<=m<60: raise ValueError('시각 형식 오류')\n        return\
+          \ h*60+m\n    start=minute(p['start']);deadline=minute(p['deadline']);t=start;travel=0;distance=0;rows=[]\n\
+          \    if deadline<=start: raise ValueError('종료 목표는 시작 이후여야 합니다')\n    for\
+          \ i,code in enumerate(order):\n        if code not in data['places']: raise\
+          \ ValueError('장소 ID 없음')\n        stay=p['stays'][code]\n        if isinstance(stay,bool)\
+          \ or not isinstance(stay,(int,float)) or not math.isfinite(stay) or stay<=0:\
+          \ raise ValueError('체류 시간 오류')\n        t+=10;begin=t;t+=stay\n        rows.append({'place':data['places'][code]['name'],'visit_start':f'{int(begin)//60:02}:{int(begin)%60:02}','visit_end':f'{int(t)//60:02}:{int(t)%60:02}','stay_minutes':stay})\n\
+          \        if i==1:t+=45\n        if i<len(order)-1:\n            key=code+'_'+order[i+1]\n\
+          \            if key not in data['routes']: raise ValueError('해당 방향의 경로 자료\
+          \ 없음')\n            r=data['routes'][key]\n            if r['mode']!='car':\
+          \ raise ValueError('자동차 경로 조건 불일치')\n            sec=r['duration_sec'];dist=r['distance_m']\n\
+          \            if sec<=0 or dist<0 or not math.isfinite(sec) or not math.isfinite(dist):raise\
+          \ ValueError('경로 수치 오류')\n            mins=math.ceil(sec/60);t+=mins;travel+=mins;distance+=dist\n\
+          \    return {'plan_id':plan_id,'order':order,'rows':rows,'finish':f'{int(t)//60:02}:{int(t)%60:02}','total_minutes':t-start,'travel_minutes':travel,'distance_m':distance,'within_time_budget':t<=deadline,'margin_minutes':deadline-t,'checks_not_completed':['방문일의\
+          \ 실제 운영·입장 마감·임시 휴관','대표점과 실제 주차장·보행 연결','차량 및 현장 상황·식사 장소'],'assumptions':'장소별\
+          \ 준비10분, 두 번째 방문 뒤 식사45분, 주어진 체류 시간. 저장된 자동차 경로 사용. 예약·실시간 조회 없음.'}\n\n\
+          def main(action_json: str, data_json: str) -> dict:\n    try:\n        text=action_json.strip()\n\
+          \        if text.startswith('```'):text=text.split('\\n',1)[1].rsplit('```',1)[0]\n\
+          \        action=json.loads(text);data=json.loads(data_json)\n        tool=action['tool'];args=action['arguments']\n\
+          \        if tool=='inspect_plan':ids=[args['plan_id']]\n        elif tool=='compare_plans':\n\
+          \            ids=args['plan_ids']\n            if not isinstance(ids,list)\
+          \ or not 2<=len(ids)<=3 or len(ids)!=len(set(ids)):raise ValueError('비교\
+          \ 계획은 서로 다른 2~3개')\n        else:raise ValueError('허용되지 않은 도구')\n      \
+          \  results=[evaluate_plan(id,data) for id in ids]\n        return {'status':'도구\
+          \ 실행 완료','observation':json.dumps({'tool':tool,'results':results},ensure_ascii=False)}\n\
+          \    except (ValueError,KeyError,TypeError,ArithmeticError) as e:\n    \
+          \    return {'status':'도구 입력 확인 필요','observation':json.dumps({'error':str(e)},ensure_ascii=False)}\n"
+        variables:
+        - variable: action_json
+          value_selector:
+          - choose2
+          - text
+        - variable: data_json
+          value_selector:
+          - start
+          - data_json
+        outputs:
+          status:
+            type: string
+            children: null
+          observation:
+            type: string
+            children: null
+    - id: final
+      type: custom
+      position:
+        x: 1640
+        y: 200
+      positionAbsolute:
+        x: 1640
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: llm
+        title: 근거를 붙여 제안
+        desc: ''
+        selected: false
+        model:
+          provider: langgenius/openai/openai
+          name: gpt-5-mini
+          mode: chat
+          completion_params: {}
+        prompt_template:
+        - id: system
+          role: system
+          text: 두 차례의 도구 호출 결과를 읽어 관광 일정 검토 메모를 작성하세요. 도구가 반환한 숫자만 사용하고 시간 조건 충족과
+            실제 운영 가능성을 구분하세요. 기준 계획, 비교 계획, 제안 이유, 현장 확인 사항을 1000자 이내로 씁니다. 계산 오류이면
+            일정을 확정하지 않습니다. 예약·실시간 교통 확인을 했다고 말하지 않습니다. 저장된 자동차 경로, 체류·준비·식사 가정, 주차장·보행
+            연결과 운영시간 미확인 범위를 명시합니다. 방문 순서와 체류 시간 중 무엇이 결과를 바꿨는지 설명합니다.
+        - id: user
+          role: user
+          text: '요청: {{#start.request#}}
+
+            첫 행동: {{#choose1.text#}}
+
+            첫 결과: {{#tool1.observation#}}
+
+            다음 행동: {{#choose2.text#}}
+
+            다음 결과: {{#tool2.observation#}}'
+        context:
+          enabled: false
+          variable_selector: []
+        vision:
+          enabled: false
+        variables: []
+    - id: end
+      type: custom
+      position:
+        x: 1960
+        y: 200
+      positionAbsolute:
+        x: 1960
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: end
+        title: 제안과 행동 기록
+        desc: ''
+        selected: false
+        outputs:
+        - variable: memo
+          value_selector:
+          - final
+          - text
+        - variable: action1
+          value_selector:
+          - choose1
+          - text
+        - variable: observation1
+          value_selector:
+          - tool1
+          - observation
+        - variable: action2
+          value_selector:
+          - choose2
+          - text
+        - variable: observation2
+          value_selector:
+          - tool2
+          - observation
+    edges:
+    - id: start-choose1
+      type: custom
+      source: start
+      target: choose1
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: start
+        targetType: llm
+        isInIteration: false
+        isInLoop: false
+    - id: choose1-tool1
+      type: custom
+      source: choose1
+      target: tool1
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: llm
+        targetType: code
+        isInIteration: false
+        isInLoop: false
+    - id: tool1-choose2
+      type: custom
+      source: tool1
+      target: choose2
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: code
+        targetType: llm
+        isInIteration: false
+        isInLoop: false
+    - id: choose2-tool2
+      type: custom
+      source: choose2
+      target: tool2
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: llm
+        targetType: code
+        isInIteration: false
+        isInLoop: false
+    - id: tool2-final
+      type: custom
+      source: tool2
+      target: final
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: code
+        targetType: llm
+        isInIteration: false
+        isInLoop: false
+    - id: final-end
+      type: custom
+      source: final
+      target: end
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: llm
+        targetType: end
+        isInIteration: false
+        isInLoop: false
+    viewport:
+      x: 0
+      y: 0
+      zoom: 0.8

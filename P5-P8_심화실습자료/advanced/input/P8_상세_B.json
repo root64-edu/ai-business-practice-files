@@ -1,0 +1,48 @@
+{
+  "source": "https://apis.data.go.kr/B551011/KorService2/detailIntro2",
+  "parameters": {
+    "MobileOS": "ETC",
+    "MobileApp": "VocationalTextbook",
+    "_type": "json",
+    "contentId": "126166",
+    "contentTypeId": "12"
+  },
+  "retrieved_at": "2026-11-11T19:56:57.814591+00:00",
+  "http_status": 200,
+  "data": {
+    "response": {
+      "header": {
+        "resultCode": "0000",
+        "resultMsg": "OK"
+      },
+      "body": {
+        "items": {
+          "item": [
+            {
+              "contentid": "126166",
+              "contenttypeid": "12",
+              "heritage1": "1",
+              "heritage2": "0",
+              "heritage3": "0",
+              "infocenter": "054-746-9913",
+              "opendate": "",
+              "restdate": "연중무휴",
+              "expguide": "",
+              "expagerange": "",
+              "accomcount": "",
+              "useseason": "",
+              "usetime": "09:00~18:00 (입장 마감 17:00)",
+              "parking": "가능",
+              "chkbabycarriage": "",
+              "chkpet": "",
+              "chkcreditcard": ""
+            }
+          ]
+        },
+        "numOfRows": 1,
+        "pageNo": 1,
+        "totalCount": 1
+      }
+    }
+  }
+}

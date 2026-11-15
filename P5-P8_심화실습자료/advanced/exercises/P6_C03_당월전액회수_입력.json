@@ -1,0 +1,25 @@
+{
+  "scenario": "C03_당월전액회수",
+  "months": [
+    "2026-11",
+    "2026-12",
+    "2027-01",
+    "2027-02"
+  ],
+  "purchase_quantity": 100,
+  "purchase_cost_krw": "961084",
+  "sales_quantities": [
+    30,
+    40,
+    20,
+    0
+  ],
+  "sale_price_krw": "20000",
+  "opening_cash_krw": "1500000",
+  "cash_floor_krw": "1000000",
+  "current_collection_ratio": "1",
+  "first_month_payment_ratio": "1",
+  "outbound_per_unit_krw": "1000",
+  "first_month_fixed_krw": "35000",
+  "assumptions": "전액 가상 판매·회수·지급 계획. 환율을 반영해 앞에서 계산한 견적 B 취득원가961084원을 고정. 부가세·관세·반품·대손·이자·추가매입 없음. 학습 계산 잔여액이며 순이익 아님."
+}

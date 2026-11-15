@@ -1,0 +1,225 @@
+version: 0.7.0
+kind: app
+app:
+  name: 교재_P7_기업공시_경영검토
+  description: 교재용 학습 흐름. 실제 결제·장부 반영 없음.
+  mode: workflow
+  icon: 📘
+  icon_type: emoji
+  icon_background: '#D5F5F6'
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:1.1.0@95f7de6ee42124cb7649f20d3f175c5b0adb66ad92640a97e4027c15b266141c
+    version: null
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      enabled: false
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+  graph:
+    nodes:
+    - id: start
+      type: custom
+      position:
+        x: 60
+        y: 200
+      positionAbsolute:
+        x: 60
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: start
+        title: 자료 JSON 입력
+        desc: ''
+        selected: false
+        variables:
+        - variable: data_json
+          label: 자료 JSON
+          type: paragraph
+          required: true
+          max_length: 200000
+          options: []
+    - id: calculate
+      type: custom
+      position:
+        x: 380
+        y: 200
+      positionAbsolute:
+        x: 380
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: code
+        title: 입력 검사와 계산
+        desc: ''
+        selected: false
+        code_language: python3
+        code: "\"\"\"DART snapshot comparison with explicit scope, uniqueness and\
+          \ units.\"\"\"\nimport json\nfrom decimal import Decimal as D, ROUND_HALF_UP\n\
+          ACCOUNTS=['매출액','영업이익','자산총계','부채총계','자본총계','유동자산','유동부채']\ndef analyze(records):\n\
+          \    out=[]; identities=set()\n    for record in records:\n        data=record['data']\n\
+          \        if data.get('status')!='000': raise ValueError('DART 응답 성공 아님:\
+          \ '+str(data.get('status')))\n        rows=[r for r in data['list'] if r['fs_div']=='CFS']\n\
+          \        if not rows: raise ValueError('연결재무제표 CFS 자료 없음')\n        scopes={(r['corp_code'],r['bsns_year'],r['reprt_code'],r.get('currency'),r['rcept_no'])\
+          \ for r in rows}\n        if len(scopes)!=1: raise ValueError('기업·연도·보고서·통화·접수번호\
+          \ 혼합')\n        corp,year,report,currency,receipt=next(iter(scopes))\n \
+          \       if (year,report,currency)!=('2025','11011','KRW'): raise ValueError('2025년\
+          \ 연간 원화 비교 조건 불일치')\n        if corp in identities: raise ValueError('기업\
+          \ 중복')\n        identities.add(corp)\n        def val(name,period='thstrm_amount'):\n\
+          \            found=[r for r in rows if r['account_nm']==name]\n        \
+          \    if len(found)!=1: raise ValueError(name+' 누락 또는 중복')\n            text=found[0].get(period,'').strip().replace(',','')\n\
+          \            if not text: raise ValueError(name+' 금액 누락')\n            n=D(text)\n\
+          \            if not n.is_finite(): raise ValueError('유한한 금액 아님')\n     \
+          \       return n\n        amounts={name:val(name) for name in ACCOUNTS}\n\
+          \        if amounts['자산총계']!=amounts['부채총계']+amounts['자본총계']: raise ValueError('자산\
+          \ 등식 불일치')\n        def pct(a,b):\n            if b<=0: return None\n  \
+          \          return str((a/b*100).quantize(D('.01'),rounding=ROUND_HALF_UP))\n\
+          \        prior_sales=val('매출액','frmtrm_amount')\n        out.append({'corp_code':corp,'company':record.get('company',corp),'fs_div':'CFS','year':year,'report_code':report,'currency':currency,'receipt':receipt,'retrieved_at':record.get('retrieved_at'),'source_url':'https://dart.fss.or.kr/dsaf001/main.do?rcpNo='+receipt,'amounts':{k:str(v)\
+          \ for k,v in amounts.items()},'prior_sales':str(prior_sales),'sales_growth_pct':pct(amounts['매출액']-prior_sales,prior_sales),'operating_margin_pct':pct(amounts['영업이익'],amounts['매출액']),'prior_operating_margin_pct':pct(val('영업이익','frmtrm_amount'),prior_sales),'liabilities_to_equity_pct':pct(amounts['부채총계'],amounts['자본총계']),'current_ratio_pct':pct(amounts['유동자산'],amounts['유동부채']),'notes':['분모\
+          \ 0 또는 음수의 비율은 null로 보류','CFS 선택 후 항목별 유일성 검사','당기순이익은 중복 항목을 임의 선택하지 않고\
+          \ 이번 지표에서 제외','API 저장 시점의 수치이며 정정 공시 재확인 필요']})\n    if len(out)!=2: raise\
+          \ ValueError('비교 기업 두 곳 필요')\n    return out\n\ndef main(data_json: str)\
+          \ -> dict:\n    try:\n        result=analyze(json.loads(data_json))\n  \
+          \      return {'status':'계산 완료','report':json.dumps(result,ensure_ascii=False)}\n\
+          \    except (ValueError,KeyError,TypeError,ArithmeticError) as e:\n    \
+          \    return {'status':'기준 확인 필요','report':str(e)}\n"
+        variables:
+        - variable: data_json
+          value_selector:
+          - start
+          - data_json
+        outputs:
+          status:
+            type: string
+            children: null
+          report:
+            type: string
+            children: null
+    - id: explain
+      type: custom
+      position:
+        x: 700
+        y: 200
+      positionAbsolute:
+        x: 700
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: llm
+        title: 계산 결과 검토
+        desc: ''
+        selected: false
+        model:
+          provider: langgenius/openai/openai
+          name: gpt-5-mini
+          mode: chat
+          completion_params: {}
+        prompt_template:
+        - id: system
+          role: system
+          text: 기업공시 비교 검토를 돕습니다. 계산 결과의 수치를 변경하거나 새 지표를 만들지 마세요. 기업명, 연도, CFS, 단위와
+            접수번호를 먼저 확인하고 두 기업의 매출 증가율·영업이익률·부채비율·유동비율을 비교하세요. 비율 null은 판단 보류로 설명하세요.
+            수익성·유동성·부채 구조를 구분하고 매수·매도 추천이나 신용등급·종합 순위를 만들지 마세요. 비교 문장은 비율이 높음·낮음과
+            관찰된 변화만 씁니다. 우위·우수·강함·취약·안전·여유·위험 같은 기업 평가 표현은 사용하지 마세요. 유동비율만으로 지급능력을,
+            부채비율만으로 이자부담을 확정하지 마세요. 전기 매출증가율이 없으므로 성장 둔화·가속이라고 쓰지 마세요. 원인과 전망은 추가
+            확인 질문으로만 쓰세요. 상태가 기준 확인 필요이면 비교 결론을 보류하고 수정할 입력만 안내하세요. 1200자 이내로 작성하세요.
+        - id: user
+          role: user
+          text: '상태: {{#calculate.status#}}
+
+            결과: {{#calculate.report#}}'
+        context:
+          enabled: false
+          variable_selector: []
+        vision:
+          enabled: false
+        variables: []
+    - id: end
+      type: custom
+      position:
+        x: 1020
+        y: 200
+      positionAbsolute:
+        x: 1020
+        y: 200
+      width: 242
+      height: 100
+      sourcePosition: right
+      targetPosition: left
+      data:
+        type: end
+        title: 검토 결과
+        desc: ''
+        selected: false
+        outputs:
+        - variable: memo
+          value_selector:
+          - explain
+          - text
+        - variable: calculation
+          value_selector:
+          - calculate
+          - report
+    edges:
+    - id: start-calculate
+      type: custom
+      source: start
+      target: calculate
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: start
+        targetType: code
+        isInIteration: false
+        isInLoop: false
+    - id: calculate-explain
+      type: custom
+      source: calculate
+      target: explain
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: code
+        targetType: llm
+        isInIteration: false
+        isInLoop: false
+    - id: explain-end
+      type: custom
+      source: explain
+      target: end
+      sourceHandle: source
+      targetHandle: target
+      data:
+        sourceType: llm
+        targetType: end
+        isInIteration: false
+        isInLoop: false
+    viewport:
+      x: 0
+      y: 0
+      zoom: 0.8

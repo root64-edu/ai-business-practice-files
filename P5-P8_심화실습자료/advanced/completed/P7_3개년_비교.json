@@ -1,0 +1,58 @@
+[
+  {
+    "company": "삼성전자",
+    "basis": "2025년 사업보고서에 실린 당기·전기·전전기 비교 수치. 각 연도의 최초 공시를 별도 조회한 자료가 아님",
+    "receipt": "20260310002820",
+    "records": [
+      {
+        "year": 2023,
+        "sales": "258935494000000",
+        "operating_profit": "6566976000000",
+        "operating_margin_pct": "2.54",
+        "sales_growth_pct": null
+      },
+      {
+        "year": 2024,
+        "sales": "300870903000000",
+        "operating_profit": "32725961000000",
+        "operating_margin_pct": "10.88",
+        "sales_growth_pct": "16.20"
+      },
+      {
+        "year": 2025,
+        "sales": "333605938000000",
+        "operating_profit": "43601051000000",
+        "operating_margin_pct": "13.07",
+        "sales_growth_pct": "10.88"
+      }
+    ]
+  },
+  {
+    "company": "LG전자",
+    "basis": "2025년 사업보고서에 실린 당기·전기·전전기 비교 수치. 각 연도의 최초 공시를 별도 조회한 자료가 아님",
+    "receipt": "20260706000276",
+    "records": [
+      {
+        "year": 2023,
+        "sales": "82262664000000",
+        "operating_profit": "3653294000000",
+        "operating_margin_pct": "4.44",
+        "sales_growth_pct": null
+      },
+      {
+        "year": 2024,
+        "sales": "87728182000000",
+        "operating_profit": "3419675000000",
+        "operating_margin_pct": "3.90",
+        "sales_growth_pct": "6.64"
+      },
+      {
+        "year": 2025,
+        "sales": "89200882000000",
+        "operating_profit": "2478392000000",
+        "operating_margin_pct": "2.78",
+        "sales_growth_pct": "1.68"
+      }
+    ]
+  }
+]

@@ -1,0 +1,240 @@
+{
+  "fictional": true,
+  "unit": "백만원",
+  "assumptions": "가상 기업의 독립 조건 변화. 각 사례는 R00에서 시작하며 누적하지 않음. 세금·수수료·이자·기타 손익 없음. 실제 기업의 거래·전망·회계처리 지침이 아님. cash는 학습상 현금및현금성자산으로 둠.",
+  "base": {
+    "cash": 60,
+    "receivables": 40,
+    "inventory": 80,
+    "other_current_assets": 20,
+    "noncurrent_assets": 300,
+    "current_liabilities": 100,
+    "noncurrent_liabilities": 150,
+    "equity": 250
+  },
+  "results": [
+    {
+      "id": "R00",
+      "name": "기준",
+      "changes": {},
+      "balance": {
+        "cash": 60,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 200,
+      "assets": 500,
+      "liabilities": 250,
+      "current_ratio": "200.00",
+      "cash_current_liabilities_ratio": "60.00",
+      "debt_equity_ratio": "100.00",
+      "net_current_assets": 100
+    },
+    {
+      "id": "R01",
+      "name": "채권20 회수",
+      "changes": {
+        "cash": 20,
+        "receivables": -20
+      },
+      "balance": {
+        "cash": 80,
+        "receivables": 20,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 200,
+      "assets": 500,
+      "liabilities": 250,
+      "current_ratio": "200.00",
+      "cash_current_liabilities_ratio": "80.00",
+      "debt_equity_ratio": "100.00",
+      "net_current_assets": 100
+    },
+    {
+      "id": "R02",
+      "name": "현금30으로 재고 취득",
+      "changes": {
+        "cash": -30,
+        "inventory": 30
+      },
+      "balance": {
+        "cash": 30,
+        "receivables": 40,
+        "inventory": 110,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 200,
+      "assets": 500,
+      "liabilities": 250,
+      "current_ratio": "200.00",
+      "cash_current_liabilities_ratio": "30.00",
+      "debt_equity_ratio": "100.00",
+      "net_current_assets": 100
+    },
+    {
+      "id": "R03",
+      "name": "현금20으로 유동부채 지급",
+      "changes": {
+        "cash": -20,
+        "current_liabilities": -20
+      },
+      "balance": {
+        "cash": 40,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 80,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 180,
+      "assets": 480,
+      "liabilities": 230,
+      "current_ratio": "225.00",
+      "cash_current_liabilities_ratio": "50.00",
+      "debt_equity_ratio": "92.00",
+      "net_current_assets": 100
+    },
+    {
+      "id": "R04",
+      "name": "단기차입40을 현금 수취",
+      "changes": {
+        "cash": 40,
+        "current_liabilities": 40
+      },
+      "balance": {
+        "cash": 100,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 140,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 240,
+      "assets": 540,
+      "liabilities": 290,
+      "current_ratio": "171.43",
+      "cash_current_liabilities_ratio": "71.43",
+      "debt_equity_ratio": "116.00",
+      "net_current_assets": 100
+    },
+    {
+      "id": "R05",
+      "name": "현금40으로 비유동자산 취득",
+      "changes": {
+        "cash": -40,
+        "noncurrent_assets": 40
+      },
+      "balance": {
+        "cash": 20,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 340,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 250
+      },
+      "current_assets": 160,
+      "assets": 500,
+      "liabilities": 250,
+      "current_ratio": "160.00",
+      "cash_current_liabilities_ratio": "20.00",
+      "debt_equity_ratio": "100.00",
+      "net_current_assets": 60
+    },
+    {
+      "id": "R06",
+      "name": "출자50을 현금 수취",
+      "changes": {
+        "cash": 50,
+        "equity": 50
+      },
+      "balance": {
+        "cash": 110,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 300
+      },
+      "current_assets": 250,
+      "assets": 550,
+      "liabilities": 250,
+      "current_ratio": "250.00",
+      "cash_current_liabilities_ratio": "110.00",
+      "debt_equity_ratio": "83.33",
+      "net_current_assets": 150
+    },
+    {
+      "id": "R07",
+      "name": "현금매출20·원가12",
+      "changes": {
+        "cash": 20,
+        "inventory": -12,
+        "equity": 8
+      },
+      "balance": {
+        "cash": 80,
+        "receivables": 40,
+        "inventory": 68,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 100,
+        "noncurrent_liabilities": 150,
+        "equity": 258
+      },
+      "current_assets": 208,
+      "assets": 508,
+      "liabilities": 250,
+      "current_ratio": "208.00",
+      "cash_current_liabilities_ratio": "80.00",
+      "debt_equity_ratio": "96.90",
+      "net_current_assets": 108
+    },
+    {
+      "id": "R08",
+      "name": "비유동부채30을 유동부채로 분류",
+      "changes": {
+        "current_liabilities": 30,
+        "noncurrent_liabilities": -30
+      },
+      "balance": {
+        "cash": 60,
+        "receivables": 40,
+        "inventory": 80,
+        "other_current_assets": 20,
+        "noncurrent_assets": 300,
+        "current_liabilities": 130,
+        "noncurrent_liabilities": 120,
+        "equity": 250
+      },
+      "current_assets": 200,
+      "assets": 500,
+      "liabilities": 250,
+      "current_ratio": "153.85",
+      "cash_current_liabilities_ratio": "46.15",
+      "debt_equity_ratio": "100.00",
+      "net_current_assets": 70
+    }
+  ]
+}

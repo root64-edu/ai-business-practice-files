@@ -1,0 +1,468 @@
+{
+  "scenario": "W06_박물관90분",
+  "fictional_conditions": true,
+  "note": "운영·예약 조건은 모두 가상입니다. 실제 장소의 운영시간이 아닙니다. 외부 이동·주차·식당 위치는 제외합니다.",
+  "candidate_count": 6,
+  "feasible_count": 0,
+  "conditions": {
+    "scenario": "W06_박물관90분",
+    "start": "10:00",
+    "deadline": "16:00",
+    "first": "C",
+    "last": null,
+    "meal_after_visit": 2,
+    "meal_minutes": 45,
+    "traffic_multiplier": 1.0,
+    "places": {
+      "C": {
+        "stay": 25,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      },
+      "B": {
+        "stay": 70,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      },
+      "M": {
+        "stay": 90,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": "13:00"
+      },
+      "D": {
+        "stay": 35,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      }
+    }
+  },
+  "results": [
+    {
+      "order": [
+        "C",
+        "B",
+        "M",
+        "D"
+      ],
+      "finish": "15:46",
+      "elapsed": 346,
+      "margin": 14,
+      "travel": 41,
+      "waiting": 0,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "M: 예약 시작 시각에 준비 미완료"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "10:56",
+          "ready": "11:06",
+          "wait_minutes": 0,
+          "visit_start": "11:06",
+          "visit_end": "12:16",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "12:16",
+          "end": "13:01",
+          "minutes": 45
+        },
+        {
+          "place": "M",
+          "travel_minutes": 18,
+          "arrival": "13:19",
+          "ready": "13:29",
+          "wait_minutes": 0,
+          "visit_start": "13:29",
+          "visit_end": "14:59",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 2,
+          "arrival": "15:01",
+          "ready": "15:11",
+          "wait_minutes": 0,
+          "visit_start": "15:11",
+          "visit_end": "15:46",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "B",
+        "D",
+        "M"
+      ],
+      "finish": "15:47",
+      "elapsed": 347,
+      "margin": 13,
+      "travel": 42,
+      "waiting": 0,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "M: 예약 시작 시각에 준비 미완료"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "10:56",
+          "ready": "11:06",
+          "wait_minutes": 0,
+          "visit_start": "11:06",
+          "visit_end": "12:16",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "12:16",
+          "end": "13:01",
+          "minutes": 45
+        },
+        {
+          "place": "D",
+          "travel_minutes": 18,
+          "arrival": "13:19",
+          "ready": "13:29",
+          "wait_minutes": 0,
+          "visit_start": "13:29",
+          "visit_end": "14:04",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "14:07",
+          "ready": "14:17",
+          "wait_minutes": 0,
+          "visit_start": "14:17",
+          "visit_end": "15:47",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "B",
+        "M"
+      ],
+      "finish": "15:50",
+      "elapsed": 350,
+      "margin": 10,
+      "travel": 45,
+      "waiting": 0,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "M: 예약 시작 시각에 준비 미완료"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 6,
+          "arrival": "10:41",
+          "ready": "10:51",
+          "wait_minutes": 0,
+          "visit_start": "10:51",
+          "visit_end": "11:26",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:26",
+          "end": "12:11",
+          "minutes": 45
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "12:32",
+          "ready": "12:42",
+          "wait_minutes": 0,
+          "visit_start": "12:42",
+          "visit_end": "13:52",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 18,
+          "arrival": "14:10",
+          "ready": "14:20",
+          "wait_minutes": 0,
+          "visit_start": "14:20",
+          "visit_end": "15:50",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "M",
+        "B"
+      ],
+      "finish": "16:09",
+      "elapsed": 369,
+      "margin": -9,
+      "travel": 28,
+      "waiting": 36,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "전체: 목표 종료 시각 초과"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 6,
+          "arrival": "10:41",
+          "ready": "10:51",
+          "wait_minutes": 0,
+          "visit_start": "10:51",
+          "visit_end": "11:26",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:26",
+          "end": "12:11",
+          "minutes": 45
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "12:14",
+          "ready": "12:24",
+          "wait_minutes": 36,
+          "visit_start": "13:00",
+          "visit_end": "14:30",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 19,
+          "arrival": "14:49",
+          "ready": "14:59",
+          "wait_minutes": 0,
+          "visit_start": "14:59",
+          "visit_end": "16:09",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "M",
+        "D",
+        "B"
+      ],
+      "finish": "17:43",
+      "elapsed": 463,
+      "margin": -103,
+      "travel": 26,
+      "waiting": 132,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "전체: 목표 종료 시각 초과"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "10:38",
+          "ready": "10:48",
+          "wait_minutes": 132,
+          "visit_start": "13:00",
+          "visit_end": "14:30",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "14:30",
+          "end": "15:15",
+          "minutes": 45
+        },
+        {
+          "place": "D",
+          "travel_minutes": 2,
+          "arrival": "15:17",
+          "ready": "15:27",
+          "wait_minutes": 0,
+          "visit_start": "15:27",
+          "visit_end": "16:02",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "16:23",
+          "ready": "16:33",
+          "wait_minutes": 0,
+          "visit_start": "16:33",
+          "visit_end": "17:43",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "M",
+        "B",
+        "D"
+      ],
+      "finish": "17:57",
+      "elapsed": 477,
+      "margin": -117,
+      "travel": 40,
+      "waiting": 132,
+      "feasible_under_assumptions": false,
+      "failures": [
+        "D: 마지막 입장 시각 초과",
+        "전체: 목표 종료 시각 초과"
+      ],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "10:38",
+          "ready": "10:48",
+          "wait_minutes": 132,
+          "visit_start": "13:00",
+          "visit_end": "14:30",
+          "stay_minutes": 90,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "14:30",
+          "end": "15:15",
+          "minutes": 45
+        },
+        {
+          "place": "B",
+          "travel_minutes": 19,
+          "arrival": "15:34",
+          "ready": "15:44",
+          "wait_minutes": 0,
+          "visit_start": "15:44",
+          "visit_end": "16:54",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 18,
+          "arrival": "17:12",
+          "ready": "17:22",
+          "wait_minutes": 0,
+          "visit_start": "17:22",
+          "visit_end": "17:57",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        }
+      ]
+    }
+  ]
+}

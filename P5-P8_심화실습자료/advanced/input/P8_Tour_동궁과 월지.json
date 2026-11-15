@@ -1,0 +1,57 @@
+{
+  "source": "https://apis.data.go.kr/B551011/KorService2/searchKeyword2",
+  "parameters": {
+    "MobileOS": "ETC",
+    "MobileApp": "VocationalTextbook",
+    "_type": "json",
+    "keyword": "동궁과 월지",
+    "numOfRows": "10",
+    "pageNo": "1"
+  },
+  "retrieved_at": "2026-11-11T19:47:31.520355+00:00",
+  "http_status": 200,
+  "data": {
+    "response": {
+      "header": {
+        "resultCode": "0000",
+        "resultMsg": "OK"
+      },
+      "body": {
+        "items": {
+          "item": [
+            {
+              "addr1": "경상북도 경주시 원화로 102",
+              "addr2": "(인왕동)",
+              "zipcode": "38163",
+              "areacode": "",
+              "cat1": "",
+              "cat2": "",
+              "cat3": "",
+              "contentid": "128526",
+              "contenttypeid": "12",
+              "createdtime": "20050519090000",
+              "firstimage": "https://tong.visitkorea.or.kr/cms/resource_photo/88/3020488_image2_1.JPG",
+              "firstimage2": "https://tong.visitkorea.or.kr/cms/resource_photo/88/3020488_image3_1.JPG",
+              "cpyrhtDivCd": "Type1",
+              "mapx": "129.2283447039",
+              "mapy": "35.8351582100",
+              "mlevel": "6",
+              "modifiedtime": "20261111084802",
+              "sigungucode": "",
+              "tel": "",
+              "title": "경주 동궁과 월지",
+              "lDongRegnCd": "47",
+              "lDongSignguCd": "130",
+              "lclsSystm1": "HS",
+              "lclsSystm2": "HS01",
+              "lclsSystm3": "HS010100"
+            }
+          ]
+        },
+        "numOfRows": 1,
+        "pageNo": 1,
+        "totalCount": 1
+      }
+    }
+  }
+}

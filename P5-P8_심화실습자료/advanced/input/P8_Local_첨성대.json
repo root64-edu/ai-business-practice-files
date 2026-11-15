@@ -1,0 +1,93 @@
+{
+  "source": "https://dapi.kakao.com/v2/local/search/keyword.json",
+  "parameters": {
+    "query": "경주 첨성대",
+    "size": "5"
+  },
+  "retrieved_at": "2026-11-11T19:47:31.112100+00:00",
+  "http_status": 200,
+  "data": {
+    "documents": [
+      {
+        "address_name": "경북 경주시 인왕동 839-1",
+        "category_group_code": "",
+        "category_group_name": "",
+        "category_name": "여행 > 관광,명소 > 문화유적",
+        "distance": "",
+        "id": "8089382",
+        "phone": "",
+        "place_name": "첨성대",
+        "place_url": "http://place.map.kakao.com/8089382",
+        "road_address_name": "",
+        "x": "129.21900018259583",
+        "y": "35.83471481233599"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 839",
+        "category_group_code": "",
+        "category_group_name": "",
+        "category_name": "이슈 > 이벤트 > 페스티벌",
+        "distance": "",
+        "id": "560593088",
+        "phone": "054-743-7182",
+        "place_name": "경주국가유산야행",
+        "place_url": "http://place.map.kakao.com/560593088",
+        "road_address_name": "",
+        "x": "129.21884874389394",
+        "y": "35.83468066684708"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 815-1",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 간식 > 제과,베이커리",
+        "distance": "",
+        "id": "1119886819",
+        "phone": "",
+        "place_name": "경주십원빵 첨성대점",
+        "place_url": "http://place.map.kakao.com/1119886819",
+        "road_address_name": "경북 경주시 첨성로 161",
+        "x": "129.218668584894",
+        "y": "35.8358400343646"
+      },
+      {
+        "address_name": "경북 경주시 황남동 307-1",
+        "category_group_code": "FD6",
+        "category_group_name": "음식점",
+        "category_name": "음식점 > 간식 > 제과,베이커리",
+        "distance": "",
+        "id": "26452348",
+        "phone": "054-749-3002",
+        "place_name": "첨성대초콜릿",
+        "place_url": "http://place.map.kakao.com/26452348",
+        "road_address_name": "경북 경주시 포석로 1058-7",
+        "x": "129.21031366260118",
+        "y": "35.835661573542716"
+      },
+      {
+        "address_name": "경북 경주시 인왕동 815-1",
+        "category_group_code": "CS2",
+        "category_group_name": "편의점",
+        "category_name": "가정,생활 > 편의점 > GS25",
+        "distance": "",
+        "id": "27267873",
+        "phone": "054-746-2091",
+        "place_name": "GS25 경주첨성대점",
+        "place_url": "http://place.map.kakao.com/27267873",
+        "road_address_name": "경북 경주시 첨성로 161",
+        "x": "129.218661999231",
+        "y": "35.8358419580904"
+      }
+    ],
+    "meta": {
+      "is_end": false,
+      "pageable_count": 16,
+      "same_name": {
+        "keyword": "경주 첨성대",
+        "region": [],
+        "selected_region": ""
+      },
+      "total_count": 16
+    }
+  }
+}

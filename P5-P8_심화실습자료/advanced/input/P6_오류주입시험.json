@@ -1,0 +1,42 @@
+[
+  {
+    "test_id": "E01",
+    "change": "PAY02를 같은 settlement_id로 복제",
+    "expected": "중복 식별자 검사에서 차단"
+  },
+  {
+    "test_id": "E02",
+    "change": "P6_통합입력.json 사본의 rates에서 JPY 행의 unit을 100에서 1로 변경",
+    "expected": "응답 통화 JPY(100)와 단위 불일치"
+  },
+  {
+    "test_id": "E03",
+    "change": "S02의 판매 수량을 70으로 변경",
+    "expected": "B01 재고 초과"
+  },
+  {
+    "test_id": "E04",
+    "change": "R01의 반품 수량을 41로 변경",
+    "expected": "원판매 수량 초과"
+  },
+  {
+    "test_id": "E05",
+    "change": "REC02 금액을 500달러로 변경",
+    "expected": "미수 외화 잔액 초과"
+  },
+  {
+    "test_id": "E06",
+    "change": "S05의 batch_id를 B99로 변경",
+    "expected": "참조하는 매입 배치 없음"
+  },
+  {
+    "test_id": "E07",
+    "change": "P6_통합입력.json 사본의 rates를 빈 배열 []로 변경",
+    "expected": "자료 없음, 계산 보류"
+  },
+  {
+    "test_id": "E08",
+    "change": "S04의 통화를 빈 문자열로 변경",
+    "expected": "필수 통화 누락"
+  }
+]

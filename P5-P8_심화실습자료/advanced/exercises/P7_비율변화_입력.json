@@ -1,0 +1,86 @@
+{
+  "fictional": true,
+  "unit": "백만원",
+  "base": {
+    "cash": 60,
+    "receivables": 40,
+    "inventory": 80,
+    "other_current_assets": 20,
+    "noncurrent_assets": 300,
+    "current_liabilities": 100,
+    "noncurrent_liabilities": 150,
+    "equity": 250
+  },
+  "cases": [
+    {
+      "id": "R00",
+      "name": "기준",
+      "changes": {}
+    },
+    {
+      "id": "R01",
+      "name": "채권20 회수",
+      "changes": {
+        "cash": 20,
+        "receivables": -20
+      }
+    },
+    {
+      "id": "R02",
+      "name": "현금30으로 재고 취득",
+      "changes": {
+        "cash": -30,
+        "inventory": 30
+      }
+    },
+    {
+      "id": "R03",
+      "name": "현금20으로 유동부채 지급",
+      "changes": {
+        "cash": -20,
+        "current_liabilities": -20
+      }
+    },
+    {
+      "id": "R04",
+      "name": "단기차입40을 현금 수취",
+      "changes": {
+        "cash": 40,
+        "current_liabilities": 40
+      }
+    },
+    {
+      "id": "R05",
+      "name": "현금40으로 비유동자산 취득",
+      "changes": {
+        "cash": -40,
+        "noncurrent_assets": 40
+      }
+    },
+    {
+      "id": "R06",
+      "name": "출자50을 현금 수취",
+      "changes": {
+        "cash": 50,
+        "equity": 50
+      }
+    },
+    {
+      "id": "R07",
+      "name": "현금매출20·원가12",
+      "changes": {
+        "cash": 20,
+        "inventory": -12,
+        "equity": 8
+      }
+    },
+    {
+      "id": "R08",
+      "name": "비유동부채30을 유동부채로 분류",
+      "changes": {
+        "current_liabilities": 30,
+        "noncurrent_liabilities": -30
+      }
+    }
+  ]
+}

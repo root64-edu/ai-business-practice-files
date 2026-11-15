@@ -1,0 +1,229 @@
+{
+  "purchases": [
+    {
+      "batch_id": "B01",
+      "date": "20261109",
+      "product": "메모 수첩",
+      "quantity": 100,
+      "currency": "USD",
+      "unit_price": 8,
+      "inbound_krw": 40000
+    },
+    {
+      "batch_id": "B02",
+      "date": "20261109",
+      "product": "책갈피 세트",
+      "quantity": 80,
+      "currency": "JPY",
+      "unit_price": 600,
+      "inbound_krw": 32000
+    },
+    {
+      "batch_id": "B03",
+      "date": "20261110",
+      "product": "파우치",
+      "quantity": 60,
+      "currency": "USD",
+      "unit_price": 10,
+      "inbound_krw": 24000
+    }
+  ],
+  "sales": [
+    {
+      "sale_id": "S01",
+      "batch_id": "B01",
+      "date": "20261110",
+      "market": "국내",
+      "quantity": 40,
+      "currency": "KRW",
+      "unit_price": 16000
+    },
+    {
+      "sale_id": "S02",
+      "batch_id": "B01",
+      "date": "20261110",
+      "market": "해외",
+      "quantity": 30,
+      "currency": "USD",
+      "unit_price": 14
+    },
+    {
+      "sale_id": "S03",
+      "batch_id": "B02",
+      "date": "20261110",
+      "market": "국내",
+      "quantity": 50,
+      "currency": "KRW",
+      "unit_price": 9000
+    },
+    {
+      "sale_id": "S04",
+      "batch_id": "B03",
+      "date": "20261111",
+      "market": "해외",
+      "quantity": 35,
+      "currency": "USD",
+      "unit_price": 18
+    },
+    {
+      "sale_id": "S05",
+      "batch_id": "B02",
+      "date": "20261111",
+      "market": "해외",
+      "quantity": 20,
+      "currency": "JPY",
+      "unit_price": 1000
+    }
+  ],
+  "returns": [
+    {
+      "return_id": "R01",
+      "sale_id": "S01",
+      "date": "20261111",
+      "quantity": 2,
+      "restock": true
+    },
+    {
+      "return_id": "R02",
+      "sale_id": "S04",
+      "date": "20261111",
+      "quantity": 1,
+      "restock": true
+    }
+  ],
+  "settlements": [
+    {
+      "settlement_id": "PAY01",
+      "kind": "지급",
+      "reference": "B01",
+      "date": "20261110",
+      "amount": 400,
+      "fee_krw": 2000
+    },
+    {
+      "settlement_id": "PAY02",
+      "kind": "지급",
+      "reference": "B01",
+      "date": "20261111",
+      "amount": 400,
+      "fee_krw": 2000
+    },
+    {
+      "settlement_id": "PAY03",
+      "kind": "지급",
+      "reference": "B02",
+      "date": "20261111",
+      "amount": 24000,
+      "fee_krw": 1500
+    },
+    {
+      "settlement_id": "PAY04",
+      "kind": "지급",
+      "reference": "B03",
+      "date": "20261111",
+      "amount": 600,
+      "fee_krw": 2000
+    },
+    {
+      "settlement_id": "REC01",
+      "kind": "수취",
+      "reference": "S01",
+      "date": "20261111",
+      "amount": 608000,
+      "fee_krw": 0
+    },
+    {
+      "settlement_id": "REC02",
+      "kind": "수취",
+      "reference": "S02",
+      "date": "20261111",
+      "amount": 210,
+      "fee_krw": 3000
+    },
+    {
+      "settlement_id": "REC03",
+      "kind": "수취",
+      "reference": "S03",
+      "date": "20261111",
+      "amount": 450000,
+      "fee_krw": 0
+    },
+    {
+      "settlement_id": "REC04",
+      "kind": "수취",
+      "reference": "S04",
+      "date": "20261111",
+      "amount": 306,
+      "fee_krw": 4000
+    },
+    {
+      "settlement_id": "REC05",
+      "kind": "수취",
+      "reference": "S05",
+      "date": "20261111",
+      "amount": 20000,
+      "fee_krw": 2500
+    }
+  ],
+  "shipping": [
+    {
+      "sale_id": "S02",
+      "outbound_krw": 11000,
+      "date": "20261111"
+    },
+    {
+      "sale_id": "S04",
+      "outbound_krw": 15000,
+      "date": "20261111"
+    },
+    {
+      "sale_id": "S05",
+      "outbound_krw": 7000,
+      "date": "20261111"
+    }
+  ],
+  "rates": [
+    {
+      "date": "20261109",
+      "currency": "JPY",
+      "source_unit": "JPY(100)",
+      "unit": 100,
+      "rate": "856.72"
+    },
+    {
+      "date": "20261109",
+      "currency": "USD",
+      "source_unit": "USD",
+      "unit": 1,
+      "rate": "1357.9"
+    },
+    {
+      "date": "20261110",
+      "currency": "JPY",
+      "source_unit": "JPY(100)",
+      "unit": 100,
+      "rate": "858.42"
+    },
+    {
+      "date": "20261110",
+      "currency": "USD",
+      "source_unit": "USD",
+      "unit": 1,
+      "rate": "1355.7"
+    },
+    {
+      "date": "20261111",
+      "currency": "JPY",
+      "source_unit": "JPY(100)",
+      "unit": 100,
+      "rate": "846.44"
+    },
+    {
+      "date": "20261111",
+      "currency": "USD",
+      "source_unit": "USD",
+      "unit": 1,
+      "rate": "1343.3"
+    }
+  ]
+}

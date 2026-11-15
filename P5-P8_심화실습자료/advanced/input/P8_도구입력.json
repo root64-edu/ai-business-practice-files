@@ -1,0 +1,334 @@
+{
+  "places": {
+    "C": {
+      "name": "첨성대",
+      "kakao_place_id": "8089382",
+      "address": "경북 경주시 인왕동 839-1",
+      "x": "129.21900018259583",
+      "y": "35.83471481233599",
+      "tour_contentid": "126207",
+      "contenttypeid": "12",
+      "coordinate_role": "장소 대표점. 실제 차량 승하차·주차 위치는 별도 확인"
+    },
+    "B": {
+      "name": "불국사",
+      "kakao_place_id": "12760573",
+      "address": "경북 경주시 진현동 15-1",
+      "x": "129.3318426090494",
+      "y": "35.78991466172384",
+      "tour_contentid": "126166",
+      "contenttypeid": "12",
+      "coordinate_role": "장소 대표점. 실제 차량 승하차·주차 위치는 별도 확인"
+    },
+    "M": {
+      "name": "국립경주박물관",
+      "kakao_place_id": "9666845",
+      "address": "경북 경주시 인왕동 76",
+      "x": "129.22795026492514",
+      "y": "35.829233895353426",
+      "tour_contentid": "129778",
+      "contenttypeid": "14",
+      "coordinate_role": "장소 대표점. 실제 차량 승하차·주차 위치는 별도 확인"
+    },
+    "D": {
+      "name": "동궁과 월지",
+      "kakao_place_id": "8179010",
+      "address": "경북 경주시 인왕동 506-1",
+      "x": "129.226975518857",
+      "y": "35.8347762643542",
+      "tour_contentid": "128526",
+      "contenttypeid": "12",
+      "coordinate_role": "장소 대표점. 실제 차량 승하차·주차 위치는 별도 확인"
+    }
+  },
+  "routes": {
+    "C_M": {
+      "distance_m": 1273,
+      "duration_sec": 182,
+      "rounded_minutes": 4,
+      "retrieved_at": "2026-11-11T19:56:58.071323+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "M_D": {
+      "distance_m": 562,
+      "duration_sec": 72,
+      "rounded_minutes": 2,
+      "retrieved_at": "2026-11-11T19:56:58.012491+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "M_B": {
+      "distance_m": 12625,
+      "duration_sec": 995,
+      "rounded_minutes": 17,
+      "retrieved_at": "2026-11-11T19:56:58.158817+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "B_D": {
+      "distance_m": 12769,
+      "duration_sec": 966,
+      "rounded_minutes": 17,
+      "retrieved_at": "2026-11-11T19:56:58.140024+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "D_B": {
+      "distance_m": 13508,
+      "duration_sec": 1098,
+      "rounded_minutes": 19,
+      "retrieved_at": "2026-11-11T19:56:58.237939+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "B_C": {
+      "distance_m": 13480,
+      "duration_sec": 1043,
+      "rounded_minutes": 18,
+      "retrieved_at": "2026-11-11T19:56:58.267250+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "B_M": {
+      "distance_m": 12619,
+      "duration_sec": 959,
+      "rounded_minutes": 16,
+      "retrieved_at": "2026-11-11T19:56:57.934724+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    },
+    "C_B": {
+      "distance_m": 13486,
+      "duration_sec": 1122,
+      "rounded_minutes": 19,
+      "retrieved_at": "2026-11-11T19:56:57.983448+00:00",
+      "mode": "car",
+      "source": "https://apis-navi.kakaomobility.com/v1/directions"
+    }
+  },
+  "plans": [
+    {
+      "id": "A",
+      "title": "과밀한 초안",
+      "date": "2026-11-12",
+      "start": "10:00",
+      "deadline": "16:00",
+      "order": [
+        "C",
+        "B",
+        "M",
+        "D"
+      ],
+      "stays": {
+        "C": 40,
+        "B": 100,
+        "M": 90,
+        "D": 50
+      },
+      "rows": [
+        {
+          "place_id": "C",
+          "place": "첨성대",
+          "arrival": "10:00",
+          "visit_start": "10:10",
+          "visit_end": "10:50",
+          "stay_minutes": 40,
+          "parking_buffer": 10,
+          "next_route": "C_B",
+          "next_travel_minutes": 19
+        },
+        {
+          "place_id": "B",
+          "place": "불국사",
+          "arrival": "11:09",
+          "visit_start": "11:19",
+          "visit_end": "12:59",
+          "stay_minutes": 100,
+          "parking_buffer": 10,
+          "meal_start": "12:59",
+          "meal_end": "13:44",
+          "next_route": "B_M",
+          "next_travel_minutes": 16
+        },
+        {
+          "place_id": "M",
+          "place": "국립경주박물관",
+          "arrival": "14:00",
+          "visit_start": "14:10",
+          "visit_end": "15:40",
+          "stay_minutes": 90,
+          "parking_buffer": 10,
+          "next_route": "M_D",
+          "next_travel_minutes": 2
+        },
+        {
+          "place_id": "D",
+          "place": "동궁과 월지",
+          "arrival": "15:42",
+          "visit_start": "15:52",
+          "visit_end": "16:42",
+          "stay_minutes": 50,
+          "parking_buffer": 10
+        }
+      ],
+      "finish": "16:42",
+      "total_minutes": 402,
+      "travel_minutes": 37,
+      "distance_m": 26667,
+      "within_budget": false,
+      "margin_minutes": -42,
+      "assumptions": "체류시간·식사45분·장소별 주차 및 입장 준비10분은 가상 기획 조건. 자동차 대표점 경로 스냅숏. 실제 주차장·보행 연결·운영정보·실시간 교통은 재확인."
+    },
+    {
+      "id": "B",
+      "title": "체류시간 조정안",
+      "date": "2026-11-12",
+      "start": "10:00",
+      "deadline": "16:00",
+      "order": [
+        "C",
+        "B",
+        "M",
+        "D"
+      ],
+      "stays": {
+        "C": 25,
+        "B": 70,
+        "M": 60,
+        "D": 35
+      },
+      "rows": [
+        {
+          "place_id": "C",
+          "place": "첨성대",
+          "arrival": "10:00",
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "parking_buffer": 10,
+          "next_route": "C_B",
+          "next_travel_minutes": 19
+        },
+        {
+          "place_id": "B",
+          "place": "불국사",
+          "arrival": "10:54",
+          "visit_start": "11:04",
+          "visit_end": "12:14",
+          "stay_minutes": 70,
+          "parking_buffer": 10,
+          "meal_start": "12:14",
+          "meal_end": "12:59",
+          "next_route": "B_M",
+          "next_travel_minutes": 16
+        },
+        {
+          "place_id": "M",
+          "place": "국립경주박물관",
+          "arrival": "13:15",
+          "visit_start": "13:25",
+          "visit_end": "14:25",
+          "stay_minutes": 60,
+          "parking_buffer": 10,
+          "next_route": "M_D",
+          "next_travel_minutes": 2
+        },
+        {
+          "place_id": "D",
+          "place": "동궁과 월지",
+          "arrival": "14:27",
+          "visit_start": "14:37",
+          "visit_end": "15:12",
+          "stay_minutes": 35,
+          "parking_buffer": 10
+        }
+      ],
+      "finish": "15:12",
+      "total_minutes": 312,
+      "travel_minutes": 37,
+      "distance_m": 26667,
+      "within_budget": true,
+      "margin_minutes": 48,
+      "assumptions": "체류시간·식사45분·장소별 주차 및 입장 준비10분은 가상 기획 조건. 자동차 대표점 경로 스냅숏. 실제 주차장·보행 연결·운영정보·실시간 교통은 재확인."
+    },
+    {
+      "id": "C",
+      "title": "순서 변경 비교안",
+      "date": "2026-11-12",
+      "start": "10:00",
+      "deadline": "16:00",
+      "order": [
+        "C",
+        "M",
+        "B",
+        "D"
+      ],
+      "stays": {
+        "C": 25,
+        "B": 70,
+        "M": 60,
+        "D": 35
+      },
+      "rows": [
+        {
+          "place_id": "C",
+          "place": "첨성대",
+          "arrival": "10:00",
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "parking_buffer": 10,
+          "next_route": "C_M",
+          "next_travel_minutes": 4
+        },
+        {
+          "place_id": "M",
+          "place": "국립경주박물관",
+          "arrival": "10:39",
+          "visit_start": "10:49",
+          "visit_end": "11:49",
+          "stay_minutes": 60,
+          "parking_buffer": 10,
+          "meal_start": "11:49",
+          "meal_end": "12:34",
+          "next_route": "M_B",
+          "next_travel_minutes": 17
+        },
+        {
+          "place_id": "B",
+          "place": "불국사",
+          "arrival": "12:51",
+          "visit_start": "13:01",
+          "visit_end": "14:11",
+          "stay_minutes": 70,
+          "parking_buffer": 10,
+          "next_route": "B_D",
+          "next_travel_minutes": 17
+        },
+        {
+          "place_id": "D",
+          "place": "동궁과 월지",
+          "arrival": "14:28",
+          "visit_start": "14:38",
+          "visit_end": "15:13",
+          "stay_minutes": 35,
+          "parking_buffer": 10
+        }
+      ],
+      "finish": "15:13",
+      "total_minutes": 313,
+      "travel_minutes": 38,
+      "distance_m": 26667,
+      "within_budget": true,
+      "margin_minutes": 47,
+      "assumptions": "체류시간·식사45분·장소별 주차 및 입장 준비10분은 가상 기획 조건. 자동차 대표점 경로 스냅숏. 실제 주차장·보행 연결·운영정보·실시간 교통은 재확인."
+    }
+  ],
+  "notes": [
+    "모든 경로는 자동차. 도보·대중교통에 재사용하지 않음",
+    "B와 C의 체류시간은 같으며 이동시간은 각각37분·38분. 순서 변경이 항상 더 빠른 것은 아님",
+    "장소 대표점과 실제 주차장 위치는 다를 수 있음",
+    "운영시간은 TourAPI 상세 스냅숏과 공식 시설 공지를 함께 확인"
+  ]
+}

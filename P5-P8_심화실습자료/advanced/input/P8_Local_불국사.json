@@ -1,0 +1,93 @@
+{
+  "source": "https://dapi.kakao.com/v2/local/search/keyword.json",
+  "parameters": {
+    "query": "경주 불국사",
+    "size": "5"
+  },
+  "retrieved_at": "2026-11-11T19:47:31.202205+00:00",
+  "http_status": 200,
+  "data": {
+    "documents": [
+      {
+        "address_name": "경북 경주시 진현동 15-1",
+        "category_group_code": "",
+        "category_group_name": "",
+        "category_name": "문화,예술 > 종교 > 불교 > 절,사찰",
+        "distance": "",
+        "id": "12760573",
+        "phone": "054-746-9913",
+        "place_name": "불국사",
+        "place_url": "http://place.map.kakao.com/12760573",
+        "road_address_name": "경북 경주시 불국로 385",
+        "x": "129.3318426090494",
+        "y": "35.78991466172384"
+      },
+      {
+        "address_name": "경북 경주시 진현동 산 70-1",
+        "category_group_code": "PK6",
+        "category_group_name": "주차장",
+        "category_name": "교통,수송 > 교통시설 > 주차장 > 공영주차장",
+        "distance": "",
+        "id": "20516971",
+        "phone": "",
+        "place_name": "불국사 정문주차장",
+        "place_url": "http://place.map.kakao.com/20516971",
+        "road_address_name": "",
+        "x": "129.3322329651638",
+        "y": "35.786357938744"
+      },
+      {
+        "address_name": "경북 경주시 진현동 63-25",
+        "category_group_code": "AD5",
+        "category_group_name": "숙박",
+        "category_name": "여행 > 숙박 > 호텔",
+        "distance": "",
+        "id": "832046967",
+        "phone": "054-745-3333",
+        "place_name": "하운드호텔 경주불국사",
+        "place_url": "http://place.map.kakao.com/832046967",
+        "road_address_name": "경북 경주시 불국신택지4길 34",
+        "x": "129.325443977923",
+        "y": "35.7856641473026"
+      },
+      {
+        "address_name": "경북 경주시 진현동 50-2",
+        "category_group_code": "PK6",
+        "category_group_name": "주차장",
+        "category_name": "교통,수송 > 교통시설 > 주차장 > 공영주차장",
+        "distance": "",
+        "id": "704451699",
+        "phone": "",
+        "place_name": "불국사 공영주차장",
+        "place_url": "http://place.map.kakao.com/704451699",
+        "road_address_name": "",
+        "x": "129.32905024914854",
+        "y": "35.78642866890904"
+      },
+      {
+        "address_name": "경북 경주시 진현동 66-5",
+        "category_group_code": "",
+        "category_group_name": "",
+        "category_name": "금융,보험 > 금융서비스 > 은행 > 농축협",
+        "distance": "",
+        "id": "8246726",
+        "phone": "054-748-5654",
+        "place_name": "불국사농협 진현지점",
+        "place_url": "http://place.map.kakao.com/8246726",
+        "road_address_name": "경북 경주시 진현로2길 54",
+        "x": "129.32759715454688",
+        "y": "35.78570716345793"
+      }
+    ],
+    "meta": {
+      "is_end": false,
+      "pageable_count": 45,
+      "same_name": {
+        "keyword": "경주 불국사",
+        "region": [],
+        "selected_region": ""
+      },
+      "total_count": 137
+    }
+  }
+}

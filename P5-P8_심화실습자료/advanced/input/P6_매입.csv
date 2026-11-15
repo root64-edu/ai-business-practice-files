@@ -1,0 +1,4 @@
+﻿batch_id,date,product,quantity,currency,unit_price,inbound_krw
+B01,20261109,메모 수첩,100,USD,8,40000
+B02,20261109,책갈피 세트,80,JPY,600,32000
+B03,20261110,파우치,60,USD,10,24000

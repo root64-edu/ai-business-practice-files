@@ -1,0 +1,455 @@
+{
+  "scenario": "W01_시각제약없음",
+  "fictional_conditions": true,
+  "note": "운영·예약 조건은 모두 가상입니다. 실제 장소의 운영시간이 아닙니다. 외부 이동·주차·식당 위치는 제외합니다.",
+  "candidate_count": 6,
+  "feasible_count": 6,
+  "conditions": {
+    "scenario": "W01_시각제약없음",
+    "start": "10:00",
+    "deadline": "16:00",
+    "first": "C",
+    "last": null,
+    "meal_after_visit": 2,
+    "meal_minutes": 45,
+    "traffic_multiplier": 1.0,
+    "places": {
+      "C": {
+        "stay": 25,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      },
+      "B": {
+        "stay": 70,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      },
+      "M": {
+        "stay": 60,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      },
+      "D": {
+        "stay": 35,
+        "prep": 10,
+        "open": "09:00",
+        "last_entry": "17:00",
+        "close": "18:00",
+        "reservation": null
+      }
+    }
+  },
+  "results": [
+    {
+      "order": [
+        "C",
+        "M",
+        "D",
+        "B"
+      ],
+      "finish": "15:01",
+      "elapsed": 301,
+      "margin": 59,
+      "travel": 26,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "10:38",
+          "ready": "10:48",
+          "wait_minutes": 0,
+          "visit_start": "10:48",
+          "visit_end": "11:48",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:48",
+          "end": "12:33",
+          "minutes": 45
+        },
+        {
+          "place": "D",
+          "travel_minutes": 2,
+          "arrival": "12:35",
+          "ready": "12:45",
+          "wait_minutes": 0,
+          "visit_start": "12:45",
+          "visit_end": "13:20",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "13:41",
+          "ready": "13:51",
+          "wait_minutes": 0,
+          "visit_start": "13:51",
+          "visit_end": "15:01",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "M",
+        "B"
+      ],
+      "finish": "15:03",
+      "elapsed": 303,
+      "margin": 57,
+      "travel": 28,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 6,
+          "arrival": "10:41",
+          "ready": "10:51",
+          "wait_minutes": 0,
+          "visit_start": "10:51",
+          "visit_end": "11:26",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:26",
+          "end": "12:11",
+          "minutes": 45
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "12:14",
+          "ready": "12:24",
+          "wait_minutes": 0,
+          "visit_start": "12:24",
+          "visit_end": "13:24",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 19,
+          "arrival": "13:43",
+          "ready": "13:53",
+          "wait_minutes": 0,
+          "visit_start": "13:53",
+          "visit_end": "15:03",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "M",
+        "B",
+        "D"
+      ],
+      "finish": "15:15",
+      "elapsed": 315,
+      "margin": 45,
+      "travel": 40,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "10:38",
+          "ready": "10:48",
+          "wait_minutes": 0,
+          "visit_start": "10:48",
+          "visit_end": "11:48",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:48",
+          "end": "12:33",
+          "minutes": 45
+        },
+        {
+          "place": "B",
+          "travel_minutes": 19,
+          "arrival": "12:52",
+          "ready": "13:02",
+          "wait_minutes": 0,
+          "visit_start": "13:02",
+          "visit_end": "14:12",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 18,
+          "arrival": "14:30",
+          "ready": "14:40",
+          "wait_minutes": 0,
+          "visit_start": "14:40",
+          "visit_end": "15:15",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "B",
+        "M",
+        "D"
+      ],
+      "finish": "15:16",
+      "elapsed": 316,
+      "margin": 44,
+      "travel": 41,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "10:56",
+          "ready": "11:06",
+          "wait_minutes": 0,
+          "visit_start": "11:06",
+          "visit_end": "12:16",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "12:16",
+          "end": "13:01",
+          "minutes": 45
+        },
+        {
+          "place": "M",
+          "travel_minutes": 18,
+          "arrival": "13:19",
+          "ready": "13:29",
+          "wait_minutes": 0,
+          "visit_start": "13:29",
+          "visit_end": "14:29",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 2,
+          "arrival": "14:31",
+          "ready": "14:41",
+          "wait_minutes": 0,
+          "visit_start": "14:41",
+          "visit_end": "15:16",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "B",
+        "D",
+        "M"
+      ],
+      "finish": "15:17",
+      "elapsed": 317,
+      "margin": 43,
+      "travel": 42,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "10:56",
+          "ready": "11:06",
+          "wait_minutes": 0,
+          "visit_start": "11:06",
+          "visit_end": "12:16",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "12:16",
+          "end": "13:01",
+          "minutes": 45
+        },
+        {
+          "place": "D",
+          "travel_minutes": 18,
+          "arrival": "13:19",
+          "ready": "13:29",
+          "wait_minutes": 0,
+          "visit_start": "13:29",
+          "visit_end": "14:04",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 3,
+          "arrival": "14:07",
+          "ready": "14:17",
+          "wait_minutes": 0,
+          "visit_start": "14:17",
+          "visit_end": "15:17",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        }
+      ]
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "B",
+        "M"
+      ],
+      "finish": "15:20",
+      "elapsed": 320,
+      "margin": 40,
+      "travel": 45,
+      "waiting": 0,
+      "feasible_under_assumptions": true,
+      "failures": [],
+      "events": [
+        {
+          "place": "C",
+          "travel_minutes": 0,
+          "arrival": "10:00",
+          "ready": "10:10",
+          "wait_minutes": 0,
+          "visit_start": "10:10",
+          "visit_end": "10:35",
+          "stay_minutes": 25,
+          "prep_minutes": 10
+        },
+        {
+          "place": "D",
+          "travel_minutes": 6,
+          "arrival": "10:41",
+          "ready": "10:51",
+          "wait_minutes": 0,
+          "visit_start": "10:51",
+          "visit_end": "11:26",
+          "stay_minutes": 35,
+          "prep_minutes": 10
+        },
+        {
+          "event": "meal",
+          "start": "11:26",
+          "end": "12:11",
+          "minutes": 45
+        },
+        {
+          "place": "B",
+          "travel_minutes": 21,
+          "arrival": "12:32",
+          "ready": "12:42",
+          "wait_minutes": 0,
+          "visit_start": "12:42",
+          "visit_end": "13:52",
+          "stay_minutes": 70,
+          "prep_minutes": 10
+        },
+        {
+          "place": "M",
+          "travel_minutes": 18,
+          "arrival": "14:10",
+          "ready": "14:20",
+          "wait_minutes": 0,
+          "visit_start": "14:20",
+          "visit_end": "15:20",
+          "stay_minutes": 60,
+          "prep_minutes": 10
+        }
+      ]
+    }
+  ]
+}

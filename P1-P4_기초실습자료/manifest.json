@@ -1,0 +1,287 @@
+[
+  {
+    "path": "completed/P1-P4_Google시트_실행결과.xlsx",
+    "bytes": 210871,
+    "sha256": "b5c1879439470b8fc7cc4613f7c04111fc91e1cd97617d02df1774d600df384e"
+  },
+  {
+    "path": "completed/P1-P4_실습예제_수식포함.xlsx",
+    "bytes": 184106,
+    "sha256": "2ced98b60987a9d2f71ea4d37dc88cc1d721077b0fe2d45c8ad859a313b0a58c"
+  },
+  {
+    "path": "completed/P2_AppsScript_실행결과.xlsx",
+    "bytes": 20783,
+    "sha256": "d6518d97b77e16fcbea4af0d6578030cfe178f6fad02893fa72521048b68395b"
+  },
+  {
+    "path": "completed/p0_student_code.gs",
+    "bytes": 768,
+    "sha256": "c8761b25a27838080437062b6adafef7fb9d4fd117f34ff2102dc994794d39e5"
+  },
+  {
+    "path": "completed/p1_clean_sales.csv",
+    "bytes": 89723,
+    "sha256": "26ab3cc302ea8897bd42035509fb127847cb00d6d9813477e3d08c3ba4398327"
+  },
+  {
+    "path": "completed/p1_excluded_rows.csv",
+    "bytes": 102,
+    "sha256": "a44713716b56c652f1f20eecdfd52bc0eae1b9e8827239e9264388564d28ac8b"
+  },
+  {
+    "path": "completed/p1_product_summary.csv",
+    "bytes": 399,
+    "sha256": "69979672357460dd79a090162fc52e3f91f8e12aa3c4a41622661dce4630a515"
+  },
+  {
+    "path": "completed/p1_운영개선_제안서.md",
+    "bytes": 2284,
+    "sha256": "5f75d7443a7cfeaa389176cf4a2fe94889ae7a5f0af3743cae9c03244d991811"
+  },
+  {
+    "path": "completed/p2_AI_최초추출.csv",
+    "bytes": 4033,
+    "sha256": "089686bb851317e1fcd3df56bf80b17edf82422569bdd41abc4e85db2c9ffbe7"
+  },
+  {
+    "path": "completed/p2_ledger_checked.csv",
+    "bytes": 3857,
+    "sha256": "c9766835a4e92d9f6c3f2184bbd98f765ffdbe3fbc7d0cec61163d9480760da5"
+  },
+  {
+    "path": "completed/p2_student_code.gs",
+    "bytes": 1603,
+    "sha256": "0a3248bee901f0cd9c0e2b9d8eb003aba58a137bdb2215a68e90d3fcb9d52a78"
+  },
+  {
+    "path": "completed/p2_장부검증_보고서.md",
+    "bytes": 1587,
+    "sha256": "01b8318995b809327556df157adf648b4f4ec7c0ee462c5929ae7f8eb12e6814"
+  },
+  {
+    "path": "completed/p3_evaluation_results.csv",
+    "bytes": 26265,
+    "sha256": "724f21755f6cae6360fd935987c141ee162f2698877b53051fbc8d7f9b1aaae6"
+  },
+  {
+    "path": "completed/p3_챗봇_직접참조_지침.txt",
+    "bytes": 5430,
+    "sha256": "e94be87a86fe53920f0e844096d3f029148b91f030e2ce03a2d980f5f6bf95e6"
+  },
+  {
+    "path": "completed/p3_평가_보고서.md",
+    "bytes": 2404,
+    "sha256": "a04daa2832df7c1d2d6644b4862680f1bd640a5d1ccc224214b44b04ebd82e1f"
+  },
+  {
+    "path": "completed/p4_checklist_results.csv",
+    "bytes": 4377,
+    "sha256": "0ae25bdadd0734825ce6886c43ee5de8ec3cbe98ca000a84876755d2e82ac2b4"
+  },
+  {
+    "path": "completed/p4_verified_english.md",
+    "bytes": 4862,
+    "sha256": "33ddb53a8e005c57e84630187f485d4b0748c08b6b31b6bfa13884dbdb2d8e94"
+  },
+  {
+    "path": "completed/p4_개선검증_보고서.md",
+    "bytes": 1454,
+    "sha256": "678b58c78f8cf95254d1f6a7752cde95d0a47d96bf58349ada65ecca6b95dbda"
+  },
+  {
+    "path": "completed/p4_검수완료_상품페이지.md",
+    "bytes": 4984,
+    "sha256": "14dcd03b9c7e48fa616e76af874d0a1db6585f0756ba576abe7df91680a7f6e5"
+  },
+  {
+    "path": "completed/workbook_payload.json",
+    "bytes": 141987,
+    "sha256": "373c84865d04fd523f3b396db1a37ab37afbedf63a3e94e5e6c1dd299796b35f"
+  },
+  {
+    "path": "data/p1_products.csv",
+    "bytes": 439,
+    "sha256": "143bd82dafb3a39a03f0fab07571fe200e174068c5fb2f01237ee39e653dbb31"
+  },
+  {
+    "path": "data/p1_sales.csv",
+    "bytes": 64751,
+    "sha256": "8484dd777161f323f5c5599c79884bfb87f1accfc2f207adbdaec38effab0364"
+  },
+  {
+    "path": "data/p1_survey.csv",
+    "bytes": 7099,
+    "sha256": "6af29bd5d4a8d81f912d1c066525fde1879bb529f94ca7257157667c4747c43d"
+  },
+  {
+    "path": "data/p2_answer_key.csv",
+    "bytes": 4030,
+    "sha256": "668cacc48a06abd7f14886e2ee43dd596f5bf9891edefd5e501fd0929976b3b1"
+  },
+  {
+    "path": "data/p2_receipt_manifest.csv",
+    "bytes": 1029,
+    "sha256": "a6ad7ab60f14d60278186fe77a07a7007900ab8f8596c46b829cbad53a5c208c"
+  },
+  {
+    "path": "data/p2_receipts_01.txt",
+    "bytes": 239,
+    "sha256": "9f95dcb785851a65b68512954dea75db83c8f42a6e2dc83c3357ef58e8bd5b32"
+  },
+  {
+    "path": "data/p2_receipts_02.txt",
+    "bytes": 257,
+    "sha256": "bb4c3e3c2f57deb099588d630750226329e03e5e803755dc9b6915b32ec1e58d"
+  },
+  {
+    "path": "data/p2_receipts_03.txt",
+    "bytes": 237,
+    "sha256": "c32ff5cd8299aeb800a1357262b0b61f3bcac02056cd95330bd5954ab39af04a"
+  },
+  {
+    "path": "data/p2_receipts_04.txt",
+    "bytes": 266,
+    "sha256": "6da49d83ad8537a983c61101659cbe0d2025b620e94ff0643d1f4d4926e6ecb8"
+  },
+  {
+    "path": "data/p2_receipts_05.txt",
+    "bytes": 298,
+    "sha256": "3e10f18723a59c1337f39123a0ae6bd5078cec689f0c5414032bc1247c445573"
+  },
+  {
+    "path": "data/p2_receipts_06.txt",
+    "bytes": 232,
+    "sha256": "992b4393fe1bff268c74c2bc079ab7fc4098e699d87c316bda59a12c703bee7e"
+  },
+  {
+    "path": "data/p2_receipts_07.txt",
+    "bytes": 264,
+    "sha256": "8ea91b8808086e43dbbb58d019bb1fada8a97258177dabee7b0b026e4ae6904e"
+  },
+  {
+    "path": "data/p2_receipts_08.txt",
+    "bytes": 235,
+    "sha256": "0ab302f528428f8dfb903f30906fb7e881564a1d9e7e8f567df349ab2e4832b2"
+  },
+  {
+    "path": "data/p2_receipts_09.txt",
+    "bytes": 239,
+    "sha256": "ee09d14062af68b843ef4aaf3d8b3bdfc3789362a52c7ff3655005aaced6ab10"
+  },
+  {
+    "path": "data/p2_receipts_10.txt",
+    "bytes": 257,
+    "sha256": "0e9427bc5f5c06e5b59c0f1fc2641d6d30ae53660ea56043d3397f139e86c149"
+  },
+  {
+    "path": "data/p2_receipts_11.txt",
+    "bytes": 260,
+    "sha256": "63a1a7c61ba2b9337c54448af74d45d1806fac52123647b44be95536a56afab8"
+  },
+  {
+    "path": "data/p2_receipts_12.txt",
+    "bytes": 235,
+    "sha256": "2610ae51c85343ecfcb327e501ba6830d575d5a2d495de256cb31461815e6201"
+  },
+  {
+    "path": "data/p2_receipts_13.txt",
+    "bytes": 343,
+    "sha256": "910b361fec7328fcf8d9f1ae2efae6a6d567cb67bb1b26ea48a739990aeab8ae"
+  },
+  {
+    "path": "data/p2_receipts_14.txt",
+    "bytes": 361,
+    "sha256": "bb4994cb548a66500ee28f543118fb3d67e800a7974af41e3490d1a369ccf5be"
+  },
+  {
+    "path": "data/p2_receipts_15.txt",
+    "bytes": 268,
+    "sha256": "93c15582e9d6b201cbc670f45f912c1ae5ca3e9e6ed7a3a7955a8934f71bd99b"
+  },
+  {
+    "path": "data/p2_receipts_16.txt",
+    "bytes": 244,
+    "sha256": "9d7846b04d8641e2692826d9d78743b12203e00769a83e6a885a86b0e3c2e3e6"
+  },
+  {
+    "path": "data/p2_receipts_17.txt",
+    "bytes": 224,
+    "sha256": "08e029beb0fdd1a84b68c9191bce6ed2b20f16614c2037215c987361e539dedb"
+  },
+  {
+    "path": "data/p2_receipts_18.txt",
+    "bytes": 224,
+    "sha256": "5e27baea97823184eee37277066b22d0f6a4c27b2d31e560a8964a3f9a6b6f0e"
+  },
+  {
+    "path": "data/p2_receipts_19.txt",
+    "bytes": 257,
+    "sha256": "d62529f6ce957ed6fad220864a4b34393ecfbf6d1d5f92cc1b52f6fc8d49b2b3"
+  },
+  {
+    "path": "data/p2_receipts_20.txt",
+    "bytes": 192,
+    "sha256": "05791f003f53078876995385e4aa2a1c8189264d26da3edb151200e32f65aa5f"
+  },
+  {
+    "path": "data/p2_source_confirmation.csv",
+    "bytes": 101,
+    "sha256": "b46c1025039eb221bbf1265bc9b1614d42c0d372ccb6817234bd4f9c7345ba7e"
+  },
+  {
+    "path": "data/p3_eval_30.csv",
+    "bytes": 6764,
+    "sha256": "fe5e3bb38665ea2bf9730ed4fa81e497f24e351fb2ca4611b3b2e75c4981bed7"
+  },
+  {
+    "path": "data/p3_faq_20.md",
+    "bytes": 4231,
+    "sha256": "97be4bac68596d6a603fdfce4d79583b66aab2a72235c172eeec3918d23dd076"
+  },
+  {
+    "path": "data/p3_inquiries_40.csv",
+    "bytes": 3181,
+    "sha256": "8df862e302a9a9516f655a1f8c3757cdf8f82de8c89ebead9182e5baee464990"
+  },
+  {
+    "path": "data/p3_instructions_v1.txt",
+    "bytes": 930,
+    "sha256": "740c3317697e02e96277bb8e0acd4f9b97b1407940c43fa297093f51aa1cab29"
+  },
+  {
+    "path": "data/p3_instructions_v2.txt",
+    "bytes": 1167,
+    "sha256": "e3646233e35e78346564a9ce8f2e599f1177d0d728670b09e46c949badf402bc"
+  },
+  {
+    "path": "data/p4_classification_rules.txt",
+    "bytes": 582,
+    "sha256": "9d5e12a184001d671684bec6fdba110cbd015a0ac9a6780ed577f5c9823e94c7"
+  },
+  {
+    "path": "data/p4_page_checklist.csv",
+    "bytes": 1381,
+    "sha256": "c0a88ca3a7d17ad76d7b026c9dce4a2970b7282591bd13917236cee972615a20"
+  },
+  {
+    "path": "data/p4_products_3.md",
+    "bytes": 2512,
+    "sha256": "ea926fb964b9ce2e0526811fc588bc537c78112e268c38e043efdbf856cef04b"
+  },
+  {
+    "path": "data/p4_reference_labels.csv",
+    "bytes": 12859,
+    "sha256": "ea7e5045796027467e8d8d402a5a703bc5cbe956bc29aefda92b3b6224676e19"
+  },
+  {
+    "path": "data/p4_reviews_60.csv",
+    "bytes": 5284,
+    "sha256": "44a9ea6b2ea90428ef9027a6bbea888d0a71c98c9d37d3ed86f96f16ae81b946"
+  },
+  {
+    "path": "data/p3_canvas_request.txt",
+    "bytes": 2195,
+    "sha256": "c6229c35b9b2f389e4d6de761597257e4a2ee19935d0ec06f0baefaf9ad562b9"
+  }
+]

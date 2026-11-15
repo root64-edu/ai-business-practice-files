@@ -1,0 +1,6 @@
+﻿sale_id,batch_id,date,market,quantity,currency,unit_price
+S01,B01,20261110,국내,40,KRW,16000
+S02,B01,20261110,해외,30,USD,14
+S03,B02,20261110,국내,50,KRW,9000
+S04,B03,20261111,해외,35,USD,18
+S05,B02,20261111,해외,20,JPY,1000

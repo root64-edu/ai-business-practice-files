@@ -1,0 +1,408 @@
+{
+  "profile": "standard",
+  "first": null,
+  "last": null,
+  "candidate_count": 24,
+  "assumptions": "10:00시작·16:00목표. 장소별 준비10분·식사45분·가상 체류. 첫 장소 이전 및 마지막 이후 이동 제외. 운영·예약·현장 확인 미완료.",
+  "sort_rule": "총시간 오름차순, 같으면 거리 오름차순, 같으면 장소 코드순",
+  "route_times": {
+    "D_M": "2026-11-11T21:31:17.418761+00:00",
+    "B_M": "2026-11-11T21:31:17.112545+00:00",
+    "M_D": "2026-11-11T21:31:17.299166+00:00",
+    "C_M": "2026-11-11T21:31:16.959730+00:00",
+    "B_C": "2026-11-11T21:31:17.111096+00:00",
+    "D_B": "2026-11-11T21:31:17.394373+00:00",
+    "M_C": "2026-11-11T21:31:17.235281+00:00",
+    "C_B": "2026-11-11T21:31:16.958963+00:00",
+    "M_B": "2026-11-11T21:31:17.256686+00:00",
+    "D_C": "2026-11-11T21:31:17.351131+00:00",
+    "B_D": "2026-11-11T21:31:17.180944+00:00",
+    "C_D": "2026-11-11T21:31:16.960285+00:00"
+  },
+  "results": [
+    {
+      "order": [
+        "B",
+        "M",
+        "D",
+        "C"
+      ],
+      "route_seconds": 1220,
+      "travel_minutes": 22,
+      "distance_m": 13891,
+      "stay_minutes": 190,
+      "total_minutes": 297,
+      "finish": "14:57",
+      "margin_minutes": 63,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "B",
+        "D",
+        "C",
+        "M"
+      ],
+      "route_seconds": 1295,
+      "travel_minutes": 23,
+      "distance_m": 14752,
+      "stay_minutes": 190,
+      "total_minutes": 298,
+      "finish": "14:58",
+      "margin_minutes": 62,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "C",
+        "M",
+        "B"
+      ],
+      "route_seconds": 1342,
+      "travel_minutes": 24,
+      "distance_m": 14608,
+      "stay_minutes": 190,
+      "total_minutes": 299,
+      "finish": "14:59",
+      "margin_minutes": 61,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "B",
+        "D",
+        "M",
+        "C"
+      ],
+      "route_seconds": 1376,
+      "travel_minutes": 24,
+      "distance_m": 15337,
+      "stay_minutes": 190,
+      "total_minutes": 299,
+      "finish": "14:59",
+      "margin_minutes": 61,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "D",
+        "C",
+        "B"
+      ],
+      "route_seconds": 1356,
+      "travel_minutes": 25,
+      "distance_m": 14758,
+      "stay_minutes": 190,
+      "total_minutes": 300,
+      "finish": "15:00",
+      "margin_minutes": 60,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "B",
+        "C",
+        "M",
+        "D"
+      ],
+      "route_seconds": 1364,
+      "travel_minutes": 25,
+      "distance_m": 15315,
+      "stay_minutes": 190,
+      "total_minutes": 300,
+      "finish": "15:00",
+      "margin_minutes": 60,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "M",
+        "D",
+        "B"
+      ],
+      "route_seconds": 1424,
+      "travel_minutes": 26,
+      "distance_m": 15343,
+      "stay_minutes": 190,
+      "total_minutes": 301,
+      "finish": "15:01",
+      "margin_minutes": 59,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "M",
+        "C",
+        "B"
+      ],
+      "route_seconds": 1503,
+      "travel_minutes": 27,
+      "distance_m": 16054,
+      "stay_minutes": 190,
+      "total_minutes": 302,
+      "finish": "15:02",
+      "margin_minutes": 58,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "B",
+        "M",
+        "C",
+        "D"
+      ],
+      "route_seconds": 1558,
+      "travel_minutes": 27,
+      "distance_m": 16542,
+      "stay_minutes": 190,
+      "total_minutes": 302,
+      "finish": "15:02",
+      "margin_minutes": 58,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "M",
+        "B"
+      ],
+      "route_seconds": 1612,
+      "travel_minutes": 28,
+      "distance_m": 16570,
+      "stay_minutes": 190,
+      "total_minutes": 303,
+      "finish": "15:03",
+      "margin_minutes": 57,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "B",
+        "C",
+        "D",
+        "M"
+      ],
+      "route_seconds": 1641,
+      "travel_minutes": 29,
+      "distance_m": 17425,
+      "stay_minutes": 190,
+      "total_minutes": 304,
+      "finish": "15:04",
+      "margin_minutes": 56,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "C",
+        "D",
+        "B"
+      ],
+      "route_seconds": 1703,
+      "travel_minutes": 30,
+      "distance_m": 17431,
+      "stay_minutes": 190,
+      "total_minutes": 305,
+      "finish": "15:05",
+      "margin_minutes": 55,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "B",
+        "D",
+        "C"
+      ],
+      "route_seconds": 2279,
+      "travel_minutes": 39,
+      "distance_m": 26104,
+      "stay_minutes": 190,
+      "total_minutes": 314,
+      "finish": "15:14",
+      "margin_minutes": 46,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "M",
+        "B",
+        "D"
+      ],
+      "route_seconds": 2338,
+      "travel_minutes": 40,
+      "distance_m": 26667,
+      "stay_minutes": 190,
+      "total_minutes": 315,
+      "finish": "15:15",
+      "margin_minutes": 45,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "B",
+        "M",
+        "D"
+      ],
+      "route_seconds": 2343,
+      "travel_minutes": 41,
+      "distance_m": 26667,
+      "stay_minutes": 190,
+      "total_minutes": 316,
+      "finish": "15:16",
+      "margin_minutes": 44,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "C",
+        "B",
+        "M"
+      ],
+      "route_seconds": 2350,
+      "travel_minutes": 41,
+      "distance_m": 26815,
+      "stay_minutes": 190,
+      "total_minutes": 316,
+      "finish": "15:16",
+      "margin_minutes": 44,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "B",
+        "M",
+        "C"
+      ],
+      "route_seconds": 2430,
+      "travel_minutes": 42,
+      "distance_m": 27400,
+      "stay_minutes": 190,
+      "total_minutes": 317,
+      "finish": "15:17",
+      "margin_minutes": 43,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "M",
+        "B",
+        "C"
+      ],
+      "route_seconds": 2424,
+      "travel_minutes": 42,
+      "distance_m": 27400,
+      "stay_minutes": 190,
+      "total_minutes": 317,
+      "finish": "15:17",
+      "margin_minutes": 43,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "C",
+        "B",
+        "D"
+      ],
+      "route_seconds": 2430,
+      "travel_minutes": 42,
+      "distance_m": 27528,
+      "stay_minutes": 190,
+      "total_minutes": 317,
+      "finish": "15:17",
+      "margin_minutes": 43,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "B",
+        "D",
+        "M"
+      ],
+      "route_seconds": 2428,
+      "travel_minutes": 42,
+      "distance_m": 27550,
+      "stay_minutes": 190,
+      "total_minutes": 317,
+      "finish": "15:17",
+      "margin_minutes": 43,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "D",
+        "B",
+        "C"
+      ],
+      "route_seconds": 2437,
+      "travel_minutes": 43,
+      "distance_m": 27550,
+      "stay_minutes": 190,
+      "total_minutes": 318,
+      "finish": "15:18",
+      "margin_minutes": 42,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "D",
+        "B",
+        "C",
+        "M"
+      ],
+      "route_seconds": 2503,
+      "travel_minutes": 44,
+      "distance_m": 28261,
+      "stay_minutes": 190,
+      "total_minutes": 319,
+      "finish": "15:19",
+      "margin_minutes": 41,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "M",
+        "B",
+        "C",
+        "D"
+      ],
+      "route_seconds": 2615,
+      "travel_minutes": 45,
+      "distance_m": 28755,
+      "stay_minutes": 190,
+      "total_minutes": 320,
+      "finish": "15:20",
+      "margin_minutes": 40,
+      "within_budget": true
+    },
+    {
+      "order": [
+        "C",
+        "D",
+        "B",
+        "M"
+      ],
+      "route_seconds": 2619,
+      "travel_minutes": 45,
+      "distance_m": 28777,
+      "stay_minutes": 190,
+      "total_minutes": 320,
+      "finish": "15:20",
+      "margin_minutes": 40,
+      "within_budget": true
+    }
+  ]
+}

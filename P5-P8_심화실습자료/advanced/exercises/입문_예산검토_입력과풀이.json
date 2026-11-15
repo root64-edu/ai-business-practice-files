@@ -1,0 +1,232 @@
+{
+  "fictional_conditions": true,
+  "rate_note": "환율은 본문 저장값을 사용하되 예산·운임·구매조건은 가상. 현재 견적이나 실제 결제액이 아님.",
+  "cases": [
+    {
+      "id": "I01",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "계산 완료",
+        "report": "{\"currency\": \"USD\", \"rate\": \"1343.3\", \"rate_unit\": \"1\", \"quantity\": \"12\", \"unit_price\": \"40\", \"goods_krw\": \"644784\", \"inbound_krw\": \"25000\", \"total_krw\": \"669784\", \"budget_krw\": \"700000\", \"within_budget\": true, \"remaining_budget_krw\": \"30216\", \"review\": \"예산 안·구매 조건 별도 확인\", \"scope\": \"교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음.\"}"
+      },
+      "parsed_report": {
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": "1",
+        "quantity": "12",
+        "unit_price": "40",
+        "goods_krw": "644784",
+        "inbound_krw": "25000",
+        "total_krw": "669784",
+        "budget_krw": "700000",
+        "within_budget": true,
+        "remaining_budget_krw": "30216",
+        "review": "예산 안·구매 조건 별도 확인",
+        "scope": "교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음."
+      }
+    },
+    {
+      "id": "I02",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 669784
+      },
+      "output": {
+        "status": "계산 완료",
+        "report": "{\"currency\": \"USD\", \"rate\": \"1343.3\", \"rate_unit\": \"1\", \"quantity\": \"12\", \"unit_price\": \"40\", \"goods_krw\": \"644784\", \"inbound_krw\": \"25000\", \"total_krw\": \"669784\", \"budget_krw\": \"669784\", \"within_budget\": true, \"remaining_budget_krw\": \"0\", \"review\": \"예산 안·구매 조건 별도 확인\", \"scope\": \"교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음.\"}"
+      },
+      "parsed_report": {
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": "1",
+        "quantity": "12",
+        "unit_price": "40",
+        "goods_krw": "644784",
+        "inbound_krw": "25000",
+        "total_krw": "669784",
+        "budget_krw": "669784",
+        "within_budget": true,
+        "remaining_budget_krw": "0",
+        "review": "예산 안·구매 조건 별도 확인",
+        "scope": "교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음."
+      }
+    },
+    {
+      "id": "I03",
+      "input": {
+        "quantity": 12,
+        "unit_price": 1000,
+        "currency": "JPY",
+        "rate": "846.44",
+        "rate_unit": 100,
+        "inbound": 5000,
+        "budget": 100000
+      },
+      "output": {
+        "status": "계산 완료",
+        "report": "{\"currency\": \"JPY\", \"rate\": \"846.44\", \"rate_unit\": \"100\", \"quantity\": \"12\", \"unit_price\": \"1000\", \"goods_krw\": \"101573\", \"inbound_krw\": \"5000\", \"total_krw\": \"106573\", \"budget_krw\": \"100000\", \"within_budget\": false, \"remaining_budget_krw\": \"-6573\", \"review\": \"예산 초과·조건 재검토\", \"scope\": \"교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음.\"}"
+      },
+      "parsed_report": {
+        "currency": "JPY",
+        "rate": "846.44",
+        "rate_unit": "100",
+        "quantity": "12",
+        "unit_price": "1000",
+        "goods_krw": "101573",
+        "inbound_krw": "5000",
+        "total_krw": "106573",
+        "budget_krw": "100000",
+        "within_budget": false,
+        "remaining_budget_krw": "-6573",
+        "review": "예산 초과·조건 재검토",
+        "scope": "교육용 상품대금과 매입운임만 계산. 세금·관세·기타 비용 제외. 구매 실행 없음."
+      }
+    },
+    {
+      "id": "I04",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 100,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"통화와 환율 기준 단위가 맞지 않습니다.\"}"
+      },
+      "parsed_report": {
+        "error": "통화와 환율 기준 단위가 맞지 않습니다."
+      }
+    },
+    {
+      "id": "I05",
+      "input": {
+        "quantity": 1.5,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"수량은 정수여야 합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "수량은 정수여야 합니다."
+      }
+    },
+    {
+      "id": "I06",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "NaN",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"환율 허용 범위를 확인합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "환율 허용 범위를 확인합니다."
+      }
+    },
+    {
+      "id": "I07",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": -1,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"매입 운임 허용 범위를 확인합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "매입 운임 허용 범위를 확인합니다."
+      }
+    },
+    {
+      "id": "I08",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": ""
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"예산 입력이 필요합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "예산 입력이 필요합니다."
+      }
+    },
+    {
+      "id": "I09",
+      "input": {
+        "quantity": 12,
+        "unit_price": 40,
+        "currency": "EUR",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"이 예제는 USD와 JPY만 지원합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "이 예제는 USD와 JPY만 지원합니다."
+      }
+    },
+    {
+      "id": "I10",
+      "input": {
+        "quantity": true,
+        "unit_price": 40,
+        "currency": "USD",
+        "rate": "1343.3",
+        "rate_unit": 1,
+        "inbound": 25000,
+        "budget": 700000
+      },
+      "output": {
+        "status": "입력 확인 필요",
+        "report": "{\"error\": \"수량 입력이 필요합니다.\"}"
+      },
+      "parsed_report": {
+        "error": "수량 입력이 필요합니다."
+      }
+    }
+  ]
+}

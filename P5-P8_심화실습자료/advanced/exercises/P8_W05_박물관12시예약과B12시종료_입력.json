@@ -1,0 +1,44 @@
+{
+  "scenario": "W05_박물관12시예약과B12시종료",
+  "start": "10:00",
+  "deadline": "16:00",
+  "first": "C",
+  "last": null,
+  "meal_after_visit": 2,
+  "meal_minutes": 45,
+  "traffic_multiplier": 1.0,
+  "places": {
+    "C": {
+      "stay": 25,
+      "prep": 10,
+      "open": "09:00",
+      "last_entry": "17:00",
+      "close": "18:00",
+      "reservation": null
+    },
+    "B": {
+      "stay": 70,
+      "prep": 10,
+      "open": "09:00",
+      "last_entry": "11:30",
+      "close": "12:00",
+      "reservation": null
+    },
+    "M": {
+      "stay": 60,
+      "prep": 10,
+      "open": "09:00",
+      "last_entry": "17:00",
+      "close": "18:00",
+      "reservation": "12:00"
+    },
+    "D": {
+      "stay": 35,
+      "prep": 10,
+      "open": "09:00",
+      "last_entry": "17:00",
+      "close": "18:00",
+      "reservation": null
+    }
+  }
+}
